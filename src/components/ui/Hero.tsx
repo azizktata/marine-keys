@@ -4,6 +4,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardBody } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
@@ -13,9 +15,9 @@ import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
 export default function Hero() {
-  const covers = ["cover-1.webp", "cover-3.webp"];
+  const covers = ["/cover-1.webp", "/cover-5.jpg", "/yacht-management.jpg"];
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 4000, stopOnInteraction: true })
   );
   return (
     <Carousel
@@ -29,12 +31,6 @@ export default function Hero() {
           <CarouselItem key={index}>
             <div>
               <Card className="relative w-full h-[600px] rounded-none overflow-hidden shadow-xl bg-gray-800">
-                {/* Price Header */}
-                {/* <CardHeader className="absolute z-10 left-0 right-0 flex justify-center mt-32 flex flex-col mx-auto max-w-xs bg-white/90 rounded-xs px-4 py-2">
-                  <p className="text-[#005bc4] font-semibold"></p>
-                </CardHeader> */}
-
-                {/* Background Image */}
                 <Image
                   removeWrapper
                   alt="Card background"
@@ -64,18 +60,13 @@ export default function Hero() {
                     </Button>
                   </div>
                 </CardBody>
-
-                {/* Footer Button */}
-                {/* <CardFooter className="absolute bottom-20 left-0 right-0 flex justify-center z-10">
-                 
-                </CardFooter> */}
               </Card>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
+      <CarouselPrevious className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20  p-2 rounded-none bg-black/70 border-none text-white  hover:bg-white/40" />
+      <CarouselNext className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40" />
     </Carousel>
   );
 }

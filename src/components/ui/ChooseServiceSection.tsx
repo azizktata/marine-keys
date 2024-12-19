@@ -1,5 +1,5 @@
 import React from "react";
-import CarouselCards from "./CarouselCards";
+import CarouselImages from "./CarouselImages";
 
 export default function ChooseServiceSection() {
   return (
@@ -10,7 +10,7 @@ export default function ChooseServiceSection() {
           Choose from our services
         </h1>
         <div className="mt-8 ">
-          <CarouselCards />
+          <CarouselImages />
         </div>
       </div>
     </div>

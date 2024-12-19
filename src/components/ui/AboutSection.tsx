@@ -18,9 +18,10 @@ export default function AboutSection() {
           <h1 className="font-bold text-3xl text-[#333333]  mb-4 ">
             Marine Keys
           </h1>
-          <p className="text-[#3B3B3B] text-base  sm:text-lg max-w-sm md:max-w-[74ch] ">
+          <p className="text-[#3B3B3B] text-base   max-w-sm md:max-w-[74ch] ">
             At Marine Kyranis we set sail with a clear vision: to redefine the
             yachting experience with professionalism, precision, and passion.
+            <br />
             With years of expertise in the maritime industry, we’ve built a
             reputation for delivering world-class yachting services tailored to
             enthusiasts, owners, and aspiring seafarers alike.

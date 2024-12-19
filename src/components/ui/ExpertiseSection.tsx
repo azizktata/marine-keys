@@ -12,7 +12,7 @@ export default function ExpertiseSection() {
       <p className="text-[#606060] text-base sm:text-lg max-w-sm ">
         Why Choose Marine Kyranis?{" "}
       </p>
-      <div className="flex flex-col lg:flex-row items-start gap-4 mt-24">
+      <div className="flex flex-col lg:flex-row items-start gap-8 mt-24">
         <div className="flex flex-col items-start gap-2  max-w-xs mx-auto">
           <Image
             src="/Boat.svg"
@@ -26,7 +26,12 @@ export default function ExpertiseSection() {
             Decades of experience in the yachting industry.
           </p>
         </div>
-        <Separator orientation="vertical" />
+        <div className="hidden md:block">
+          <Separator orientation="vertical" style={{ height: "160px" }} />
+        </div>
+        <div className=" md:hidden">
+          <Separator />
+        </div>
         <div className="flex flex-col md:flex-row justify-center gap-8">
           <div className="flex flex-col items-start max-w-xs mx-auto  gap-2">
             <Image
