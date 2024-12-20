@@ -26,11 +26,11 @@ export default function ExpertiseSection() {
             Decades of experience in the yachting industry.
           </p>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Separator orientation="vertical" style={{ height: "160px" }} />
         </div>
-        <div className=" md:hidden">
-          <Separator />
+        <div className="block md:hidden text-center self-start">
+          <Separator orientation="horizontal" style={{ width: "160px" }} />
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-8">
           <div className="flex flex-col items-start max-w-xs mx-auto  gap-2">
