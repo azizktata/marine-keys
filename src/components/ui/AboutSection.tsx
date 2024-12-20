@@ -7,7 +7,7 @@ export default function AboutSection() {
       <div className="flex flex-col md:flex-row items-center md:items-stretch justify-between w-[90%]   max-w-2xl mx-auto py-32 ">
         <div className="relative max-w-sm w-full h-[300px] md:h-[400px] ">
           <Image
-            src="/workers.png"
+            src="/workers.PNG"
             alt="Marine Keys"
             fill
             className="rounded-none object-cover  "

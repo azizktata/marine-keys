@@ -63,7 +63,7 @@ export default function Home() {
 
         <div className="relative w-full h-[350px] sm:h-auto order-6 sm:order-5 ">
           <Image
-            src="/workers.png"
+            src="/workers.PNG"
             alt="Marine Keys"
             fill
             className="rounded-none object-cover  "

@@ -42,7 +42,7 @@ export default function Hero() {
 
                 {/* Body Content */}
                 <CardBody className="absolute inset-0 z-10 flex flex-col  items-start  justify-start md:items-center md:justify-center bg-gradient-to-r from-black/80 via-linear to-transparent">
-                  <div className="ml-8 sm:ml-4 md:ml-0 my-auto flex flex-col md:items-center">
+                  <div className="ml-9 sm:ml-4 md:ml-0 my-auto flex flex-col md:items-center">
                     <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-center w-full md:max-w-2xl">
                       Marine Keys <br></br> Elite Yachting Services
                     </h1>
