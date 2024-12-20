@@ -17,7 +17,7 @@ export default function Home() {
       <section className="w-[90%] mx-auto mb-16 lg:w-[80%] ">
         <FlexSection />
       </section>
-      <section className="w-full mb-16">
+      <section id="about" className="w-full mb-16">
         <AboutSection />
       </section>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-stretch mb-16 ">
@@ -86,7 +86,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="w-full ">
+      <section id="services" className="w-full ">
         <ChooseServiceSection />
       </section>
       <section className="w-full mb-16 my-16">

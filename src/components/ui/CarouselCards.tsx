@@ -28,11 +28,11 @@ export default function CarouselCards() {
           >
             <BoatCard
               nom="Marine Keys"
-              length={350}
+              length={42}
               image={img}
               prix={350}
-              capacity="350"
-              type="350"
+              capacity="150"
+              type="Caramander"
             />
           </CarouselItem>
         ))}

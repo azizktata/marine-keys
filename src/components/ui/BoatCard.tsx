@@ -31,7 +31,7 @@ export default function BoatCard({
         <h3 className="text-xl text-black">{nom}</h3>
         <div className="flex items-center justify-between w-full gap-2 border-b py-2 border-gray-200">
           <p className="text-sm text-gray-500"> Length</p>
-          <span className="text-xs">{length}</span>
+          <span className="text-xs ">{length}</span>
         </div>
         <div className="flex items-center justify-between w-full gap-2 border-b py-2 border-gray-200">
           <p className="text-sm text-gray-500"> Capacity</p>

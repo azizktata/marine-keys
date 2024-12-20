@@ -22,7 +22,7 @@ export default function ExpertiseSection() {
             className="rounded-none object-cover"
           />
           <h4 className="text-[#02446E] font-bold">Expert Team</h4>
-          <p className="text-[#606060] text-base  max-w-[260px] sm:text-lg ">
+          <p className="text-[#606060] text-base  max-w-[260px] sm:text-medium ">
             Decades of experience in the yachting industry.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function ExpertiseSection() {
               className="rounded-none object-cover"
             />
             <h4 className="text-[#02446E] font-bold">Personalized Service</h4>
-            <p className="text-[#606060] text-base sm:text-lg  max-w-[260px] ">
+            <p className="text-[#606060] text-base sm:text-medium  max-w-[260px] ">
               Tailored solutions to meet your unique needs.
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function ExpertiseSection() {
               className="rounded-none object-cover"
             />
             <h4 className="text-[#02446E] font-bold">24/7 Support</h4>
-            <p className="text-[#606060] text-base sm:text-lg  max-w-[260px]">
+            <p className="text-[#606060] text-base sm:text-medium  max-w-[260px]">
               Always available for your peace of mind.
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function ExpertiseSection() {
               className="rounded-none object-cover"
             />
             <h4 className="text-[#02446E] font-bold">Global Reach</h4>
-            <p className="text-[#606060] text-base sm:text-lg max-w-[260px] ">
+            <p className="text-[#606060] text-base sm:text-medium max-w-[260px] ">
               Serving clients worldwide with professionalism and care.
             </p>
           </div>

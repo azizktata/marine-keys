@@ -46,9 +46,8 @@ export default function Hero() {
                     <h1 className="text-white font-bold text-3xl sm:text-5xl md:text-center w-full md:max-w-2xl">
                       Marine Keys <br></br> Elite Yachting Services
                     </h1>
-                    <p className="text-gray-200 max-w-xs sm:max-w-sm text-md md:text-xl  md:text-center mt-2 md:max-w-md">
-                      Elite Yachting Services specializing in various yacht
-                      services, delivery and maintenance
+                    <p className="text-gray-200 max-w-xs sm:max-w-sm text-md md:text-lg font-light  md:text-center mt-2 md:max-w-md">
+                      specializing in yacht services, delivery and maintenance
                     </p>
 
                     <Button

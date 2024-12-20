@@ -14,13 +14,19 @@ export default function AboutSection() {
           />
         </div>
         <div className="flex flex-col bg-white p-8  max-w-sm md:max-w-[74ch] ">
-          <p className="text-[#19B4F0] mb-2">About us</p>
+          <p className="text-[#19B4F0] mb-1">About us</p>
           <h1 className="font-bold text-3xl text-[#333333]  mb-4 ">
             Marine Keys
           </h1>
-          <p className="text-[#3B3B3B] text-base   max-w-sm md:max-w-[74ch] ">
-            At Marine Kyranis we set sail with a clear vision: to redefine the
-            yachting experience with professionalism, precision, and passion.
+          <p className="text-[#3B3B3B] text-base max-w-sm md:max-w-[74ch] leading-relaxed tracking-wide">
+            At{" "}
+            <span className="font-semibold text-[#1E2A47]">Marine Kyranis</span>{" "}
+            we set sail with a clear vision: to redefine the yachting experience
+            with{" "}
+            <span className="font-semibold text-[#1E2A47]">
+              professionalism, precision, and passion
+            </span>
+            .
             <br />
             With years of expertise in the maritime industry, we’ve built a
             reputation for delivering world-class yachting services tailored to
