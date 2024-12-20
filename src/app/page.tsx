@@ -31,9 +31,9 @@ export default function Home() {
 
         <div className="relative w-full h-[350px] sm:h-auto order-2">
           <Image
-            src="/workers.png"
+            src="/yacht-management.jpg"
             alt="Marine Keys"
-            layout="fill"
+            fill
             className="rounded-none object-cover  "
           />
         </div>
@@ -47,9 +47,9 @@ export default function Home() {
 
         <div className="relative w-full h-[350px] sm:h-auto order-4 sm:order-3 md:order-4">
           <Image
-            src="/workers.png"
+            src="/hero-2.webp"
             alt="Marine Keys"
-            layout="fill"
+            fill
             className="rounded-none object-cover  "
           />
         </div>
@@ -65,7 +65,7 @@ export default function Home() {
           <Image
             src="/workers.png"
             alt="Marine Keys"
-            layout="fill"
+            fill
             className="rounded-none object-cover  "
           />
         </div>
@@ -79,9 +79,9 @@ export default function Home() {
 
         <div className="relative w-full h-[350px] sm:h-auto order-8 sm:order-7 ">
           <Image
-            src="/workers.png"
+            src="/cover-5.jpg"
             alt="Marine Keys"
-            layout="fill"
+            fill
             className="rounded-none object-cover  "
           />
         </div>

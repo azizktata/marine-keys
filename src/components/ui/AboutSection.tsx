@@ -5,12 +5,13 @@ export default function AboutSection() {
   return (
     <div className=" bg-[url('/bg-wave.jpg')] bg-cover bg-center ">
       <div className="flex flex-col md:flex-row items-center md:items-stretch justify-between w-[90%]   max-w-2xl mx-auto py-32 ">
-        <div className="relative max-w-sm w-full w-full h-[300px] md:h-[400px]">
+        <div className="relative max-w-sm w-full h-[300px] md:h-[400px] ">
           <Image
             src="/workers.png"
             alt="Marine Keys"
-            layout="fill"
+            fill
             className="rounded-none object-cover  "
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 400px"
           />
         </div>
         <div className="flex flex-col bg-white p-8  max-w-sm md:max-w-[74ch] ">

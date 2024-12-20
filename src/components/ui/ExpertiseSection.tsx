@@ -61,7 +61,7 @@ export default function ExpertiseSection() {
           </div>
           <div className="flex flex-col items-start gap-2  max-w-[260px] mx-auto">
             <Image
-              src="/Globe.svg"
+              src="/globe.svg"
               alt="Marine Keys"
               width={64}
               height={64}

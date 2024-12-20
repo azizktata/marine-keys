@@ -92,8 +92,8 @@ export default function CarouselImages() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute top-1/2 left-1 transform -translate-y-1/2 z-20  p-2 rounded-none bg-black/70 border-none text-white  hover:bg-white/40" />
-      <CarouselNext className="absolute top-1/2 right-1 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40" />
+      <CarouselPrevious className="absolute top-1/2 left-0 transform -translate-y-1/2 z-20  p-2 rounded-none bg-black/70 border-none text-white  hover:bg-white/40" />
+      <CarouselNext className="absolute top-1/2 right-0 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40" />
     </Carousel>
   );
 }
