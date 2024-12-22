@@ -30,7 +30,7 @@ export default function Home() {
           <h1 className="font-bold text-center text-3xl text-[#333333]  mb-16">
             {t("Subtitle")}
           </h1>
-          <CarouselServices services={services.slice(0, 4)} />
+          <CarouselServices services={services.slice(0, 5)} />
           <CarouselServices services={services.slice(5, 8)} speed={3000} />
         </div>
         {/* <div className="order-1">
