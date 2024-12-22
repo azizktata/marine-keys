@@ -9,18 +9,23 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import Link from "next/link";
+
 import { Button } from "@nextui-org/button";
 
 import { Phone } from "lucide-react";
 import { Image } from "@nextui-org/image";
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/i18n/routing";
+import { Switch } from "@nextui-org/switch";
 
+export default function Header({ lang }: { lang: string }) {
+  const t = useTranslations("navLinks");
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const router = useRouter();
   const menuItems = [
-    { label: "Accueil", path: "/" },
-    { label: "Services", path: "/#services" },
-    { label: "About us", path: "/#about" },
+    { label: t("home"), path: "/" },
+    { label: t("about"), path: "/#about" },
+    { label: t("services"), path: "/#services" },
   ];
   const handleWhatsAppCall = () => {
     const phoneNumber = "21698797410";
@@ -52,18 +57,18 @@ export default function Header() {
       <NavbarContent className="hidden sm:flex gap-16 text-lg" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/">
-            Accueil
+            {t("home")}
           </Link>
         </NavbarItem>
 
         <NavbarItem>
           <Link color="foreground" href="/#services">
-            Services
+            {t("services")}
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link className="text-base" href="/#about">
-            About us
+            {t("about")}
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -78,6 +83,37 @@ export default function Header() {
             <Phone size={16} />
             <span>+216 98 797 410</span>
           </Button>
+        </NavbarItem>
+
+        <NavbarItem className="flex">
+          <Switch
+            defaultSelected={lang === "en"} // Ensures it reflects the current language
+            color="primary"
+            size="lg"
+            onChange={() => {
+              const newLang = lang === "en" ? "fr" : "en";
+              router.push(`./${newLang}`);
+            }}
+            thumbIcon={({ isSelected }) =>
+              isSelected ? (
+                <Image
+                  src="https://flagcdn.com/us.svg"
+                  alt="English"
+                  width={20}
+                  height={20}
+                  className="rounded-full"
+                />
+              ) : (
+                <Image
+                  src="https://flagcdn.com/fr.svg"
+                  alt="French"
+                  width={20}
+                  height={20}
+                  className="rounded-full"
+                />
+              )
+            }
+          />
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu className="flex flex-col  gap-8 pt-4">

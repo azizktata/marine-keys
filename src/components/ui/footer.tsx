@@ -101,7 +101,7 @@ export default function Footer() {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Delivery
+                    Delivery & SoS yachting
                   </a>
                 </li>
 
@@ -121,19 +121,10 @@ export default function Footer() {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Maintenance & In-charge
+                    Cleaning, Maintenance & In-charge
                   </a>
                 </li>
 
-                <li>
-                  <a
-                    href="#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Cleaning
-                  </a>
-                </li>
                 <li>
                   <a
                     href="#services"
@@ -150,15 +141,6 @@ export default function Footer() {
                   >
                     {" "}
                     Survey
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    SoS yachting
                   </a>
                 </li>
               </ul>

@@ -3,11 +3,11 @@ import type { Config } from "tailwindcss";
 
 export default {
     darkMode: ["class"],
-    content: [
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(breadcrumbs|button|card|image|navbar|ripple|spinner).js"
+    "./node_modules/@nextui-org/theme/dist/components/(breadcrumbs|button|card|image|navbar|toggle|ripple|spinner).js"
   ],
   theme: {
   	extend: {

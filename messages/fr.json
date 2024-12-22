@@ -1,0 +1,110 @@
+{
+    "Buttons":{
+        "Button1": "En savoir plus",
+        "Button2": "Voir plus"
+
+    },
+    "heroSection": {
+        "heroTitle": "Elite Yachting Services",
+        "heroSubtitle": "spécialisé dans les services de yachting, la livraison et l'entretien",
+        "heroButton": "En savoir plus"
+    },
+    "weOfferSection": {
+        "Title": "Nous offrons",
+        "Subtitle": "Services de yachting d'élite redéfinis",
+        "Description": "Découvrez les services de yachting experts avec Marine Kyranis—votre partenaire de confiance pour des solutions professionnelles, fiables et personnalisées, que vous soyez un yachtsman chevronné ou un propriétaire novice.",
+        "Checkpoin1": "Livraison professionnelle de yachts",
+        "Checkpoin2": "75% plus rapide sur l'entretien",
+        "Checkpoin3": "Services de livraison de yachts mondiaux"
+           
+    },
+    "chooseServiceSection":{
+        "Title": "Services de yachting",
+        "Subtitle": "Choisissez"    
+    },
+
+    "AboutSection":{
+        "Title": "À propos de nous",
+        "Subtitle": "Marine Keys",
+        "Description": "Marine Kyranis est un fournisseur de premier plan de services de yachting, spécialisé dans la livraison et l'entretien de yachts. Notre équipe d'experts est dédiée à fournir des solutions professionnelles, fiables et personnalisées pour répondre aux besoins uniques de chaque client."
+    },
+    "OurServicesSection":{
+        "Title": "Nos services",
+        "Subtitle": "Solutions de yachting expertes"
+    },
+    "Sales&RentingSection":{
+        "RentingTitle": "LOCATION P2P",
+        "RentingSubtitle": "Bateaux en location",
+        "SalesTitle": "A VENDRE",
+        "SalesSubtitle": "Bateaux en vedette"
+      
+    },
+
+    "ExpertisesSection":{
+        "Title": "Notre expertise",
+        "Subtitle": "La meilleure solution pour votre yacht",
+        "Description": "Pourquoi choisir Marine Keys?",
+        "block1": {
+            "Title": "Équipe professionnelle",
+            "Description": "Decades of experience in the yachting industry."
+        },
+        "block2": {
+            "Title": "Service personnalisé",
+            "Description": "Tailored solutions to meet your unique needs."
+        },
+        "block3": {
+            "Title": "Support 24/7",
+            "Description": "Always available for your peace of mind."
+        },
+        "block4": {
+            "Title": "Portée mondiale",
+            "Description": "Serving clients worldwide with professionalism and care."
+        }
+
+    },
+ "Services": {
+    "Service1": {
+      "Title": "Livraison de yachts",
+      "Description": "Livraison sûre et rapide de yachts à l'emplacement de votre choix."
+    },
+    "Service2": {
+      "Title": "Entretien de yachts",
+      "Description": "Solutions d'entretien complètes pour maintenir votre yacht en parfait état."
+    },
+    "Service3": {
+      "Title": "Formation de yachts",
+      "Description": "Formation professionnelle pour les propriétaires de yachts et leur équipage."
+    },
+    "Service4": {
+      "Title": "Gestion de yachts",
+      "Description": "Gestion complète de yachts pour une tranquillité d'esprit totale."
+    },
+    "Service5": {
+      "Title": "Inspections de yachts",
+      "Description": "Inspections détaillées pour garantir la sécurité et la qualité de votre yacht."
+    },
+    "Service6": {
+      "Title": "Services d'urgence",
+      "Description": "Assistance d'urgence 24/7 pour les propriétaires de yachts."
+    },
+    "Service7": {
+      "Title": "Vente et location de yachts",
+      "Description": "Vente et location de yachts de luxe pour les clients exigeants."
+    },
+    "Service8": {
+      "Title": "Nettoyage de yachts",
+      "Description": "Nettoyage professionnel pour maintenir votre yacht en parfait état."
+    }
+  },
+  "boatCard":{
+    "length": "longueur",
+    "capacity": "capacité",
+    "price": "prix",
+    "type": "type"
+  },
+    "navLinks": {
+        "home": "Accueil",
+        "about": "À propos",
+        "services": "Services"
+    }
+}

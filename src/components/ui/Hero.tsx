@@ -13,8 +13,11 @@ import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@nextui-org/button";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("heroSection");
+  const b = useTranslations("Buttons");
   const covers = ["/cover-1.webp", "/cover-5.jpg", "/yacht-management.jpg"];
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true })
@@ -44,10 +47,10 @@ export default function Hero() {
                 <CardBody className="absolute inset-0 z-10 flex flex-col  items-start  justify-start md:items-center md:justify-center bg-gradient-to-r from-black/80 via-linear to-transparent">
                   <div className="ml-9 sm:ml-4 md:ml-0 my-auto flex flex-col md:items-center">
                     <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-center w-full md:max-w-2xl">
-                      Marine Keys <br></br> Elite Yachting Services
+                      Marine Keys <br></br> {t("heroTitle")}
                     </h1>
                     <p className="text-gray-200 max-w-[280px] sm:max-w-sm text-md md:text-lg font-light  md:text-center mt-2 md:max-w-md">
-                      specializing in yacht services, delivery and maintenance
+                      {t("heroSubtitle")}
                     </p>
 
                     <Button
@@ -55,7 +58,7 @@ export default function Hero() {
                       href={`/#services`}
                       className="px-6 py-6 bg-[#2D72E0] text-white self-start md:self-center rounded-sm text-md sm:text-lg  hover:bg-[#223F67] focus:bg-[#223F67] mt-12"
                     >
-                      Discover more
+                      {b("Button1")}
                     </Button>
                   </div>
                 </CardBody>

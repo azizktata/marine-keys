@@ -1,16 +1,18 @@
 import { Image } from "@nextui-org/image";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 
 export default function ExpertiseSection() {
+  const t = useTranslations("ExpertisesSection");
   return (
     <div className="flex flex-col items-center w-[90%] py-8 mx-auto ">
-      <h4 className="text-[#02446E]  mb-2">Marine Keys</h4>
+      <h4 className="text-[#02446E]  mb-2">{t("Title")}</h4>
       <h1 className="font-bold text-center text-3xl text-[#333333] max-w-xs mb-4">
-        The best solution for your yacht
+        {t("Subtitle")}
       </h1>
       <p className="text-[#606060] text-base sm:text-lg max-w-sm ">
-        Why Choose Marine Kyranis?{" "}
+        {t("Description")}
       </p>
       <div className="flex flex-col lg:flex-row items-start gap-8 mt-24">
         <div className="flex flex-col items-start gap-2  max-w-xs mx-auto">
@@ -21,9 +23,9 @@ export default function ExpertiseSection() {
             height={64}
             className="rounded-none object-cover"
           />
-          <h4 className="text-[#02446E] font-bold">Expert Team</h4>
+          <h4 className="text-[#02446E] font-bold"> {t("block1.Title")}</h4>
           <p className="text-[#606060] text-base  max-w-[260px] sm:text-medium ">
-            Decades of experience in the yachting industry.
+            {t("block1.Description")}
           </p>
         </div>
         <div className="hidden lg:block">
@@ -41,9 +43,9 @@ export default function ExpertiseSection() {
               height={64}
               className="rounded-none object-cover"
             />
-            <h4 className="text-[#02446E] font-bold">Personalized Service</h4>
+            <h4 className="text-[#02446E] font-bold">{t("block2.Title")}</h4>
             <p className="text-[#606060] text-base sm:text-medium  max-w-[260px] ">
-              Tailored solutions to meet your unique needs.
+              {t("block2.Description")}
             </p>
           </div>
           <div className="flex flex-col items-start gap-2  max-w-[260px] mx-auto">
@@ -54,9 +56,9 @@ export default function ExpertiseSection() {
               height={64}
               className="rounded-none object-cover"
             />
-            <h4 className="text-[#02446E] font-bold">24/7 Support</h4>
+            <h4 className="text-[#02446E] font-bold">{t("block3.Title")}</h4>
             <p className="text-[#606060] text-base sm:text-medium  max-w-[260px]">
-              Always available for your peace of mind.
+              {t("block3.Description")}
             </p>
           </div>
           <div className="flex flex-col items-start gap-2  max-w-[260px] mx-auto">
@@ -67,9 +69,9 @@ export default function ExpertiseSection() {
               height={64}
               className="rounded-none object-cover"
             />
-            <h4 className="text-[#02446E] font-bold">Global Reach</h4>
+            <h4 className="text-[#02446E] font-bold">{t("block4.Title")}</h4>
             <p className="text-[#606060] text-base sm:text-medium max-w-[260px] ">
-              Serving clients worldwide with professionalism and care.
+              {t("block4.Description")}
             </p>
           </div>
         </div>

@@ -1,0 +1,111 @@
+{
+    "Buttons":{
+        "Button1": "Learn More",
+        "Button2": "View More"
+
+    },
+    "heroSection": {
+        "heroTitle": "Elite Yachting Services",
+        "heroSubtitle": "specializing in yacht services, delivery and maintenance"
+        
+    },
+    "weOfferSection": {
+        "Title": "We Offer",
+        "Subtitle": "Elite Yachting Services Redefined",
+        "Description": "Discover expert yachting services with Marine Kyranis—your trusted partner for professional, reliable, and personalized solutions, whether you're a seasoned yachtsman or a first-time owner.",
+        "Checkpoin1": "Professional Yacht Delivery",
+        "Checkpoin2": "75% Faster Turnaround on Maintenance",
+        "Checkpoin3": "Global Yacht Delivery Services"
+           
+    },
+    "chooseServiceSection":{
+        "Title": "Yachting Services",
+        "Subtitle": "Choose Your Service"    
+    },
+
+    "AboutSection":{
+        "Title": "About Us",
+        "Subtitle": "Marine Keys",
+        "Description": "Marine Kyranis is a leading provider of yachting services, specializing in yacht delivery and maintenance. Our team of experts is dedicated to providing professional, reliable, and personalized solutions to meet the unique needs of every client."
+    },
+    "OurServicesSection":{
+        "Title": "Our Services",
+        "Subtitle": "Expert Yachting Solutions"
+    },
+    "Sales&RentingSection":{
+        "RentingTitle": "P2P RENTING",
+        "RentingSubtitle": "Featured boats",
+        "SalesTitle": "FOR SALE",
+        "SalesSubtitle": "Featured boats"
+      
+    },
+
+    "ExpertisesSection":{
+        "Title": "Our Expertise",
+        "Subtitle": "The best solution for your yacht",
+        "Description": "Why Choose Marine Kyranis?",
+        "block1": {
+            "Title": "Professional Team",
+            "Description": "Decades of experience in the yachting industry."
+        },
+        "block2": {
+            "Title": "Personalized Service",
+            "Description": "Tailored solutions to meet your unique needs."
+        },
+        "block3": {
+            "Title": "24/7 Support",
+            "Description": "Always available for your peace of mind."
+        },
+        "block4": {
+            "Title": "Global Reach",
+            "Description": "Serving clients worldwide with professionalism and care."
+        }
+
+    },
+ "Services": {
+    "Service1": {
+      "Title": "Yacht Delivery",
+      "Description": "Safe and timely yacht delivery to your desired location."
+    },
+    "Service2": {
+      "Title": "Maintenance",
+      "Description": "Comprehensive maintenance solutions to keep your yacht in top condition."
+    },
+    "Service3": {
+      "Title": "Yacht Training",
+      "Description": "Comprehensive yacht training to enhance your skills on the water."
+    },
+    "Service4": {
+      "Title": "Yacht Incharge",
+      "Description": "Experienced yacht crew for on-board management and assistance."
+    },
+    "Service5": {
+      "Title": "Yacht Survey",
+      "Description": "Detailed yacht surveys to assess the condition of your vessel."
+    },
+    "Service6": {
+      "Title": "SoS Yachting",
+      "Description": "Emergency support services for yachts in distress."
+    },
+    "Service7": {
+      "Title": "Sales & Renting",
+      "Description": "Yacht sales and rental services tailored to your needs."
+    },
+    "Service8": {
+      "Title": "Yacht Cleaning",
+      "Description": "Thorough cleaning services to maintain your yacht's pristine appearance."
+    }
+  },
+  "boatCard":{
+    "length": "length",
+    "capacity": "capacity",
+    "price": "price",
+    "type": "type"
+  },
+
+    "navLinks": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services"
+    }
+}
