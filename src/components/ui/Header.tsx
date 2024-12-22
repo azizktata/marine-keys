@@ -42,13 +42,13 @@ export default function Header({ lang }: { lang: string }) {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <NavbarBrand className="hidden sm:flex">
           <Link href={"/"} className="font-bold text-inherit">
             <Image
               src="/Marine_keys-logo.png"
               alt="logo"
-              width={110}
-              height={110}
+              width={80}
+              height={80}
             />
           </Link>
         </NavbarBrand>

@@ -68,7 +68,7 @@ export default function ServiceCard({
       : "bg-gray-300";
 
   return (
-    <div className="flex   items-center w-full ">
+    <div className="flex flex-col md:flex-row   items-center w-full ">
       <div
         className={`flex flex-col items-start w-full   py-16 max-h-[340px] h-auto relative ${color}`}
       >

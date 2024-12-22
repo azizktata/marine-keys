@@ -33,7 +33,8 @@ export default function Home() {
           <CarouselServices services={services.slice(0, 5)} />
           <CarouselServices services={services.slice(5, 8)} speed={3000} />
         </div>
-        {/* <div className="order-1">
+      </section>
+      {/* <div className="order-1">
           <ServiceCard
             title="Maintenance"
             description="We provide a wide range of maintenance services for your yacht."
@@ -97,7 +98,7 @@ export default function Home() {
             className="rounded-none object-cover  "
           />
         </div> */}
-      </section>
+
       {/* <section id="services" className="w-full ">
         <ChooseServiceSection />
       </section> */}

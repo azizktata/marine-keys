@@ -32,7 +32,7 @@ export default function CarouselServices({
       <CarouselContent className="m-auto flex ">
         {infiniteServices.map((service, index) => (
           <CarouselItem
-            className=" basis-1/2  p-0 flex  justify-center items-center "
+            className=" md:basis-1/2  p-0 flex  justify-center items-center "
             key={index}
           >
             <ServiceCard

@@ -1,30 +1,30 @@
 export const services = [
+  {
+    title: "Yacht Delivery",
+    imageUrl: "/hero-2.webp",
+    description:
+      "Experienced yacht crew for on-board management and assistance.",
+      number: 1
+  },
+  {
+    title: "Yacht Maintenance",
+    imageUrl: "/maintenance.webp",
+    description:
+      "Professional yacht maintenance services to keep your vessel in top condition.",
+      number: 2
+  },
+  {
+    title: "Yacht Incharge ",
+    imageUrl: "/workers.PNG",
+    description: "Safe and timely yacht delivery to your desired location.",
+    number: 3
+  },
     {
       title: "Yacht Trainning",
       imageUrl: "/yacht-management.jpg",
       description:
         "Comprehensive yacht training to enhance your skills on the water.",
         number: 4,
-    },
-    {
-      title: "Yacht Incharge ",
-      imageUrl: "/workers.PNG",
-      description: "Safe and timely yacht delivery to your desired location.",
-      number: 3
-    },
-    {
-      title: "Yacht Maintenance",
-      imageUrl: "/maintenance.webp",
-      description:
-        "Professional yacht maintenance services to keep your vessel in top condition.",
-        number: 2
-    },
-    {
-      title: "Yacht Delivery",
-      imageUrl: "/hero-2.webp",
-      description:
-        "Experienced yacht crew for on-board management and assistance.",
-        number: 1
     },
     {
       title: "Yacht Survey",
