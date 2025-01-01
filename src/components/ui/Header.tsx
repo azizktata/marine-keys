@@ -47,8 +47,8 @@ export default function Header({ lang }: { lang: string }) {
             <Image
               src="/Marine_keys-logo.png"
               alt="logo"
-              width={80}
-              height={80}
+              width={88}
+              height={88}
             />
           </Link>
         </NavbarBrand>

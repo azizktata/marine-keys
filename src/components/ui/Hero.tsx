@@ -46,10 +46,10 @@ export default function Hero() {
                 {/* Body Content */}
                 <CardBody className="absolute inset-0 z-10 flex flex-col  items-start  justify-start md:items-center md:justify-center bg-gradient-to-r from-black/80 via-linear to-transparent">
                   <div className="ml-9 sm:ml-4 md:ml-0 my-auto flex flex-col md:items-center">
-                    <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-center w-full md:max-w-2xl">
+                    <h1 className="text-white font-bold text-4xl sm:text-6xl md:text-center w-full md:max-w-3xl">
                       Marine Keys <br></br> {t("heroTitle")}
                     </h1>
-                    <p className="text-gray-200 max-w-[280px] sm:max-w-sm text-md md:text-lg font-light  md:text-center mt-2 md:max-w-md">
+                    <p className="text-gray-200 max-w-md sm:max-w-sm text-md md:text-lg font-light  md:text-center mt-2 md:max-w-lg">
                       {t("heroSubtitle")}
                     </p>
 

@@ -8,6 +8,7 @@ import {
   LifeBuoy,
   Sailboat,
   Search,
+  Ship,
   Store,
   Wrench,
 } from "lucide-react";
@@ -33,7 +34,7 @@ export default function ServiceCard({
     number === 1 ? (
       <Sailboat size={42} color="white" /> // Yacht Delivery
     ) : number === 2 ? (
-      <Wrench size={42} color="white" /> // Yacht Maintenance
+      <Ship size={42} color="white" /> // Yacht Maintenance
     ) : number === 3 ? (
       <Anchor size={42} color="white" /> // Yacht Trainning
     ) : number === 4 ? (

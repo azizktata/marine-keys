@@ -9,7 +9,7 @@ export default function FlexSection() {
     <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8">
       <div className="flex flex-col items-start  md:w-1/2">
         <p className="text-[#19B4F0] uppercase"> {t("Title")} </p>
-        <h1 className="font-bold text-3xl text-[#333333]  mb-2">
+        <h1 className="font-bold text-5xl text-[#333333]  mb-2">
           {t("Subtitle")}
         </h1>
         <p className="text-[#3B3B3B] text-base  sm:text-lg max-w-md mb-8">

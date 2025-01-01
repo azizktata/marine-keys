@@ -7,8 +7,8 @@ export default function ExpertiseSection() {
   const t = useTranslations("ExpertisesSection");
   return (
     <div className="flex flex-col items-center w-[90%] py-8 mx-auto ">
-      <h4 className="text-[#02446E]  mb-2">{t("Title")}</h4>
-      <h1 className="font-bold text-center text-3xl text-[#333333] max-w-xs mb-4">
+      <h4 className="text-[#02446E] text-xl mb-2">{t("Title")}</h4>
+      <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333] max-w-md mb-4">
         {t("Subtitle")}
       </h1>
       <p className="text-[#606060] text-base sm:text-lg max-w-sm ">

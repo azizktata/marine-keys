@@ -18,7 +18,7 @@ export default function AboutSection() {
         </div>
         <div className="flex flex-col bg-white p-8  max-w-sm md:max-w-[74ch] ">
           <p className="text-[#19B4F0] mb-1"> {t("Title")} </p>
-          <h1 className="font-bold text-3xl text-[#333333]  mb-4 ">
+          <h1 className="font-bold text-3xl lg:text-4xl text-[#333333]  mb-4 ">
             {t("Subtitle")}
           </h1>
           <p className="text-[#3B3B3B] text-base max-w-sm md:max-w-[74ch] leading-relaxed tracking-wide">
