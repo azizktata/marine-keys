@@ -1,18 +1,40 @@
 import { Image } from "@nextui-org/image";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
-import { useTranslations } from "next-intl";
 
-export default function ExpertiseSection() {
-  const t = useTranslations("ExpertisesSection");
+export default function ExpertiseSection({
+  expertise,
+}: {
+  expertise: {
+    title: string;
+    subtitle: string;
+    description: string;
+    block1: {
+      title: string;
+      description: string;
+    };
+    block2: {
+      title: string;
+      description: string;
+    };
+    block3: {
+      title: string;
+      description: string;
+    };
+    block4: {
+      title: string;
+      description: string;
+    };
+  };
+}) {
   return (
     <div className="flex flex-col items-center w-[90%] py-8 mx-auto ">
-      <h4 className="text-[#02446E] text-xl mb-2">{t("Title")}</h4>
-      <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333] max-w-md mb-4">
-        {t("Subtitle")}
+      <h4 className="text-[#02446E] text-xl mb-2">{expertise.title}</h4>
+      <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333] max-w-lg mb-4">
+        {expertise.subtitle}
       </h1>
       <p className="text-[#606060] text-base sm:text-lg max-w-sm ">
-        {t("Description")}
+        {expertise.description}
       </p>
       <div className="flex flex-col lg:flex-row items-start gap-8 mt-24">
         <div className="flex flex-col items-start gap-2  max-w-xs mx-auto">
@@ -23,9 +45,12 @@ export default function ExpertiseSection() {
             height={64}
             className="rounded-none object-cover"
           />
-          <h4 className="text-[#02446E] font-bold"> {t("block1.Title")}</h4>
+          <h4 className="text-[#02446E] font-bold">
+            {" "}
+            {expertise.block1.title}
+          </h4>
           <p className="text-[#606060] text-base  max-w-[260px] sm:text-medium ">
-            {t("block1.Description")}
+            {expertise.block1.description}
           </p>
         </div>
         <div className="hidden lg:block">
@@ -43,9 +68,11 @@ export default function ExpertiseSection() {
               height={64}
               className="rounded-none object-cover"
             />
-            <h4 className="text-[#02446E] font-bold">{t("block2.Title")}</h4>
+            <h4 className="text-[#02446E] font-bold">
+              {expertise.block2.title}
+            </h4>
             <p className="text-[#606060] text-base sm:text-medium  max-w-[260px] ">
-              {t("block2.Description")}
+              {expertise.block2.description}
             </p>
           </div>
           <div className="flex flex-col items-start gap-2  max-w-[260px] mx-auto">
@@ -56,9 +83,11 @@ export default function ExpertiseSection() {
               height={64}
               className="rounded-none object-cover"
             />
-            <h4 className="text-[#02446E] font-bold">{t("block3.Title")}</h4>
+            <h4 className="text-[#02446E] font-bold">
+              {expertise.block3.title}
+            </h4>
             <p className="text-[#606060] text-base sm:text-medium  max-w-[260px]">
-              {t("block3.Description")}
+              {expertise.block3.description}
             </p>
           </div>
           <div className="flex flex-col items-start gap-2  max-w-[260px] mx-auto">
@@ -69,9 +98,11 @@ export default function ExpertiseSection() {
               height={64}
               className="rounded-none object-cover"
             />
-            <h4 className="text-[#02446E] font-bold">{t("block4.Title")}</h4>
+            <h4 className="text-[#02446E] font-bold">
+              {expertise.block4.title}
+            </h4>
             <p className="text-[#606060] text-base sm:text-medium max-w-[260px] ">
-              {t("block4.Description")}
+              {expertise.block4.description}
             </p>
           </div>
         </div>

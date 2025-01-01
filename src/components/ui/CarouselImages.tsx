@@ -9,19 +9,27 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import { services } from "@/utils/getData";
 import { Card, CardFooter } from "@nextui-org/card";
-import { useTranslations } from "next-intl";
 
-export default function CarouselImages() {
+export default function CarouselImages({
+  services,
+}: {
+  services: {
+    title: string;
+    description: string;
+    image: string;
+    number: number;
+  }[];
+}) {
+  const myServices = [...services];
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
-  const t = useTranslations(`Services`);
+  // const t = useTranslations(`Services`);
   return (
     <Carousel plugins={[plugin.current]} className="w-full  m-auto">
       <CarouselContent className="m-auto flex ">
-        {services.map((service, index) => (
+        {myServices.map((service, index) => (
           <CarouselItem
             className=" sm:basis-1/2  flex justify-center items-center"
             key={index}
@@ -29,7 +37,7 @@ export default function CarouselImages() {
             <div className="relative group w-[400px] h-[350px]  ">
               <Card className="h-full border-none rounded-none ">
                 <Image
-                  src={service.imageUrl}
+                  src={service.image}
                   alt="Marine Keys"
                   width={400}
                   height={350}
@@ -39,13 +47,13 @@ export default function CarouselImages() {
                 <div className="absolute inset-0 bg-[#223F67] bg-opacity-80 flex items-center justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white/90 px-2 pb-4 max-w-[260px] leading-relaxed">
                     {/* {service.description} */}
-                    {t(`Service${index + 1}.Description`)}
+                    {service.description}
                   </p>
                 </div>
                 <CardFooter className="absolute inset-x-0 bottom-0 ">
                   <div className="bg-white w-full  px-2 py-3 bg-opacity-75 hover:bg-opacity-90">
                     <p className="text-[#223F67] text-center text-xs font-bold">
-                      {t(`Service${index + 1}.Title`)}
+                      {service.title}
                     </p>
                   </div>
                 </CardFooter>

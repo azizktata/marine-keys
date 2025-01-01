@@ -52,4 +52,12 @@ export const services = [
       number: 8
     },
   ];
-
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+  export const fetchDataFromWP = async () => {
+      const res = await fetch(`${process.env.BASE_URL}`);
+      const data = await res.json();
+      if(!data) {
+        return [];
+      }
+      return data;
+  };

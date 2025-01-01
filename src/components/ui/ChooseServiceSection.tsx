@@ -2,7 +2,16 @@ import React from "react";
 import CarouselImages from "./CarouselImages";
 import { useTranslations } from "next-intl";
 
-export default function ChooseServiceSection() {
+export default function ChooseServiceSection({
+  services,
+}: {
+  services: {
+    title: string;
+    description: string;
+    image: string;
+    number: number;
+  }[];
+}) {
   const t = useTranslations("chooseServiceSection");
   return (
     <div className="bg-[url('/bg-ocean.jpg')] bg-cover bg-center w-full">
@@ -11,7 +20,7 @@ export default function ChooseServiceSection() {
         <h4 className=" text-[#BFA888] text-lg ">{t("Title")}</h4>
         <h1 className="text-3xl font-bold text-white">{t("Subtitle")}</h1>
         <div className="mt-8 ">
-          <CarouselImages />
+          <CarouselImages services={services} />
         </div>
       </div>
     </div>

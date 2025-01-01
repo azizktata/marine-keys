@@ -46,11 +46,11 @@
         "Description": "Pourquoi choisir Marine Keys?",
         "block1": {
             "Title": "Équipe professionnelle",
-            "Description": "Decades of experience in the yachting industry."
+            "Description": "Des décennies d'expérience dans l'industrie du yachting."
         },
         "block2": {
             "Title": "Service personnalisé",
-            "Description": "Tailored solutions to meet your unique needs."
+            "Description": "Des solutions sur mesure pour répondre à vos besoins uniques."
         },
         "block3": {
             "Title": "Support 24/7",
@@ -58,7 +58,7 @@
         },
         "block4": {
             "Title": "Portée mondiale",
-            "Description": "Serving clients worldwide with professionalism and care."
+            "Description": "Servir des clients dans le monde entier avec professionnalisme et attention."
         }
 
     },

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "@nextui-org/button";
 import {
   Anchor,
@@ -10,7 +9,6 @@ import {
   Search,
   Ship,
   Store,
-  Wrench,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -27,7 +25,6 @@ export default function ServiceCard({
   number: number;
   imageUrl: string;
 }) {
-  const t = useTranslations(`Services.Service${number}`);
   const b = useTranslations("Buttons");
 
   const icon =
@@ -78,8 +75,8 @@ export default function ServiceCard({
             0{number}
           </h1>{" "}
           {icon}
-          <h1 className="text-2xl text-white font-semibold ">{t("Title")}</h1>
-          <p className="text-white max-w-xs">{t("Description")}</p>
+          <h1 className="text-2xl text-white font-semibold ">{title}</h1>
+          <p className="text-white max-w-xs">{description}</p>
           <Button variant="light" className="text-white ">
             {b("Button1")}
             <ArrowRight size={16} />
@@ -92,6 +89,7 @@ export default function ServiceCard({
           alt="Marine Keys"
           fill
           className="rounded-none object-cover  "
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
     </div>

@@ -16,7 +16,7 @@ export default function CarouselServices({
   services: {
     title: string;
     description: string;
-    imageUrl: string;
+    image: string;
     number: number;
   }[];
   speed?: number;
@@ -25,7 +25,6 @@ export default function CarouselServices({
     Autoplay({ delay: speed, stopOnInteraction: false })
   );
 
-  // Duplicate the service list to ensure infinite scrolling
   const infiniteServices = [...services, ...services];
   return (
     <Carousel plugins={[plugin.current]} className="w-full  m-auto">
@@ -38,8 +37,8 @@ export default function CarouselServices({
             <ServiceCard
               title={service.title}
               description={service.description}
-              number={service.number}
-              imageUrl={service.imageUrl}
+              number={+service.number}
+              imageUrl={service.image}
             />
           </CarouselItem>
         ))}
