@@ -35,7 +35,7 @@ export default async function Home({
       </section>
       <section id="services" className="w-full flex flex-col  mb-16 ">
         <div className="flex flex-col items-center mb-8">
-          <h4 className="text-[#02446E] text-xl mb-2"> {ourServices.title} </h4>
+          <h4 className="text-[#02446E] text-xl mb-4"> {ourServices.title} </h4>
           <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333]  mb-16">
             {ourServices.subtitle}
           </h1>
@@ -46,7 +46,7 @@ export default async function Home({
 
       <section className="w-full mb-16 my-16">
         <div className="flex flex-col items-center mb-8">
-          <h4 className="text-[#02446E] text-xl mb-2">
+          <h4 className="text-[#02446E] text-xl mb-4">
             {sales_renting.rentingtitle}
           </h4>
           <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333] max-w-md mb-8">
@@ -57,7 +57,7 @@ export default async function Home({
       </section>
       <section className="w-full bg-[#F4F4EE] mb-16 py-16">
         <div className="flex flex-col items-center mb-8">
-          <h4 className="text-[#02446E] text-xl mb-2">
+          <h4 className="text-[#02446E] text-xl mb-4">
             {sales_renting.salestitle}
           </h4>
           <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333] max-w-md mb-8">
