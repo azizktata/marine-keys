@@ -8,12 +8,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardBody } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@nextui-org/button";
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Hero({
   hero,
@@ -47,11 +47,10 @@ export default function Hero({
             <div>
               <Card className="relative w-full h-[600px] rounded-none overflow-hidden shadow-xl bg-gray-800">
                 <Image
-                  removeWrapper
                   alt="Card background"
                   className="absolute z-0 w-full h-full object-cover"
                   src={cover || "/cover-1.jpg"}
-                  radius="none"
+                  fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-linear"></div>
 
