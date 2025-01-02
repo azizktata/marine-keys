@@ -7,7 +7,7 @@ const nextConfig = {
     images: {
         remotePatterns: [
           {
-            protocol: 'https' as const,
+            protocol: 'http' as const,
             hostname: 'marines.cluster027.hosting.ovh.net',
             pathname: '/wp-content/uploads/**',
           },
