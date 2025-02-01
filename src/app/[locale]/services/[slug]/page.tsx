@@ -20,7 +20,7 @@ export default async function Page({
             src={service.image}
             alt={service.titre}
             className="object-cover w-full"
-            layout="fill"
+            fill
           />
           <div className="absolute inset-0 bg-black/60 "></div>
         </div>
