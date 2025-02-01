@@ -10,13 +10,7 @@ export default function Footer() {
         <div className="flex md:flex-row justify-between items-center flex-col px-8">
           <div className="w-1/2 mb-8">
             <div className="text-teal-600">
-              <Image
-                src="/Marine_keys-logo.png"
-                alt="Marine Keys"
-                width={150}
-                height={150}
-                className="rounded-none object-cover"
-              />
+              <Image src="/logo.png" alt="logo" width={130} height={100} />
             </div>
 
             <ul className=" flex gap-6">

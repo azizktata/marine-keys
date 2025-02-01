@@ -36,7 +36,12 @@ export default function Header({ lang }: { lang: string }) {
     setIsMenuOpen(false); // Close the menu when an item is clicked
   };
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen} isBordered>
+    <Navbar
+      className="py-2"
+      onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      isBordered
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -44,12 +49,7 @@ export default function Header({ lang }: { lang: string }) {
         />
         <NavbarBrand className="hidden sm:flex">
           <Link href={"/"} className="font-bold text-inherit">
-            <Image
-              src="/Marine_keys-logo.png"
-              alt="logo"
-              width={88}
-              height={88}
-            />
+            <Image src="/logo.png" alt="logo" width={125} height={70} />
           </Link>
         </NavbarBrand>
       </NavbarContent>
