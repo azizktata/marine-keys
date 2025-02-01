@@ -5,6 +5,7 @@ import ChooseServiceSection from "./ChooseServiceSection";
 export default function FlexSection({
   weOffer,
   services,
+  locale,
 }: {
   weOffer: {
     title: string;
@@ -20,6 +21,7 @@ export default function FlexSection({
     image: string;
     number: number;
   }[];
+  locale: string;
 }) {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8">
@@ -53,7 +55,7 @@ export default function FlexSection({
         </div>
       </div>
       <div className="flex w-full md:w-1/2 ">
-        <ChooseServiceSection services={services} />
+        <ChooseServiceSection services={services} locale={locale} />
       </div>
     </div>
   );

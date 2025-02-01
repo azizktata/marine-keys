@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 export default function ChooseServiceSection({
   services,
+  locale,
 }: {
   services: {
     title: string;
@@ -11,6 +12,7 @@ export default function ChooseServiceSection({
     image: string;
     number: number;
   }[];
+  locale: string;
 }) {
   const t = useTranslations("chooseServiceSection");
   return (
@@ -20,7 +22,7 @@ export default function ChooseServiceSection({
         <h4 className=" text-[#BFA888] text-lg ">{t("Title")}</h4>
         <h1 className="text-3xl font-bold text-white">{t("Subtitle")}</h1>
         <div className="mt-8 ">
-          <CarouselImages services={services} />
+          <CarouselImages services={services} locale={locale} />
         </div>
       </div>
     </div>

@@ -8,12 +8,12 @@ export default function Footer() {
     <footer className="bg-gray-100 border-t border-gray-200">
       <div className="mx-auto max-w-screen-xl space-y-16 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8 ">
         <div className="flex md:flex-row justify-between items-center flex-col px-8">
-          <div className="w-1/2 mb-8">
+          <div className="w-1/2 mb-8 flex flex-col items-center">
             <div className="text-teal-600">
-              <Image src="/logo.png" alt="logo" width={130} height={100} />
+              <Image src="/logo.png" alt="logo" width={150} height={100} />
             </div>
 
-            <ul className=" flex gap-6">
+            <ul className=" flex  gap-6">
               <li>
                 <a
                   href="#"
@@ -105,7 +105,7 @@ export default function Footer() {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Trainning
+                    Training
                   </a>
                 </li>
 
@@ -134,7 +134,7 @@ export default function Footer() {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Survey
+                    Inspection
                   </a>
                 </li>
               </ul>

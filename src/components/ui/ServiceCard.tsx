@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@nextui-org/button";
 import {
   Anchor,
@@ -12,21 +13,22 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-
 export default function ServiceCard({
   title,
   description,
   number,
   imageUrl,
+  locale,
 }: {
   title: string;
   description: string;
   number: number;
   imageUrl: string;
+  locale: string;
 }) {
   const b = useTranslations("Buttons");
-
   const icon =
     number === 1 ? (
       <Sailboat size={42} color="white" /> // Yacht Delivery
@@ -77,10 +79,16 @@ export default function ServiceCard({
           {icon}
           <h1 className="text-2xl text-white font-semibold ">{title}</h1>
           <p className="text-white max-w-xs">{description}</p>
-          <Button variant="light" className="text-white ">
-            {b("Button1")}
-            <ArrowRight size={16} />
-          </Button>
+          <Link
+            href={`/${locale}/services/${title
+              .toLowerCase()
+              .replace(/ /g, "-")}`}
+          >
+            <Button variant="light" className="text-white ">
+              {b("Button1")}
+              <ArrowRight size={16} />
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="relative w-full  h-[338px] ">

@@ -10,9 +10,11 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { Card, CardFooter } from "@nextui-org/card";
+import Link from "next/link";
 
 export default function CarouselImages({
   services,
+  locale,
 }: {
   services: {
     title: string;
@@ -20,6 +22,7 @@ export default function CarouselImages({
     image: string;
     number: number;
   }[];
+  locale: string;
 }) {
   const myServices = [...services];
   const plugin = React.useRef(
@@ -52,9 +55,15 @@ export default function CarouselImages({
                 </div>
                 <CardFooter className="absolute inset-x-0 bottom-0 ">
                   <div className="bg-white w-full  px-2 py-3 bg-opacity-75 hover:bg-opacity-90">
-                    <p className="text-[#223F67] text-center text-xs font-bold">
-                      {service.title}
-                    </p>
+                    <Link
+                      href={`/${locale}/services/${service.title
+                        .toLowerCase()
+                        .replace(/ /g, "-")}`}
+                    >
+                      <p className="text-[#223F67] text-center text-xs font-bold">
+                        {service.title}
+                      </p>
+                    </Link>
                   </div>
                 </CardFooter>
               </Card>

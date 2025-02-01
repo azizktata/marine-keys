@@ -12,6 +12,7 @@ import ServiceCard from "./ServiceCard";
 export default function CarouselServices({
   services,
   speed = 2000,
+  locale,
 }: {
   services: {
     title: string;
@@ -20,6 +21,7 @@ export default function CarouselServices({
     number: number;
   }[];
   speed?: number;
+  locale: string;
 }) {
   const plugin = React.useRef(
     Autoplay({ delay: speed, stopOnInteraction: false })
@@ -39,6 +41,7 @@ export default function CarouselServices({
               description={service.description}
               number={+service.number}
               imageUrl={service.image}
+              locale={locale}
             />
           </CarouselItem>
         ))}

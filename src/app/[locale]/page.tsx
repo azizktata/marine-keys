@@ -28,7 +28,7 @@ export default async function Home({
         <Hero hero={hero} />
       </section>
       <section className="w-[90%] mx-auto mb-16 lg:w-[80%] ">
-        <FlexSection weOffer={weOffer} services={services} />
+        <FlexSection weOffer={weOffer} services={services} locale={locale} />
       </section>
       <section id="about" className="w-full mb-16">
         <AboutSection about={about} />
@@ -39,8 +39,12 @@ export default async function Home({
           <h1 className="font-bold text-center text-3xl md:text-5xl text-[#333333]  mb-16">
             {ourServices.subtitle}
           </h1>
-          <CarouselServices services={services.slice(0, 5)} />
-          <CarouselServices services={services.slice(5, 8)} speed={3000} />
+          <CarouselServices services={services.slice(0, 5)} locale={locale} />
+          <CarouselServices
+            services={services.slice(5, 8)}
+            speed={3000}
+            locale={locale}
+          />
         </div>
       </section>
 

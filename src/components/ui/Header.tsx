@@ -15,13 +15,16 @@ import { Button } from "@nextui-org/button";
 import { Phone } from "lucide-react";
 import { Image } from "@nextui-org/image";
 import { useTranslations } from "next-intl";
-import { Link, useRouter } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import { Switch } from "@nextui-org/switch";
+import { usePathname, useRouter } from "next/navigation";
+import handleLocaleToggle from "@/utils/handleLocaleToggle";
 
 export default function Header({ lang }: { lang: string }) {
   const t = useTranslations("navLinks");
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const router = useRouter();
+  const pathname = usePathname();
   const menuItems = [
     { label: t("home"), path: "/" },
     { label: t("about"), path: "/#about" },
@@ -92,7 +95,14 @@ export default function Header({ lang }: { lang: string }) {
             size="lg"
             onChange={() => {
               const newLang = lang === "en" ? "fr" : "en";
-              router.push(`./${newLang}`);
+              if (pathname.match(/\/services\/.+/)) {
+                const newPath = handleLocaleToggle(pathname);
+
+                console.log(newPath);
+                router.push(`/${newLang}/${newPath}`);
+              } else {
+                router.push(`./${newLang}`);
+              }
             }}
             thumbIcon={({ isSelected }) =>
               isSelected ? (

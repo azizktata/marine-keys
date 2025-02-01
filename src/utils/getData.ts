@@ -54,7 +54,15 @@ export const services = [
   ];
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
   export const fetchDataFromWP = async () => {
-      const res = await fetch(`${process.env.BASE_URL}`);
+      const res = await fetch(`${process.env.BASE_URL}/marinekeys`, {next: {revalidate: 3600}});
+      const data = await res.json();
+      if(!data) {
+        return [];
+      }
+      return data;
+  };
+  export const fetchServiceFromWP = async (slug:string, locale:string) => {
+      const res = await fetch(`${process.env.BASE_URL}/services-${locale}?slug=${slug}`,{next: {revalidate: 1800}});
       const data = await res.json();
       if(!data) {
         return [];
