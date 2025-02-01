@@ -2,6 +2,7 @@
 import React from "react";
 
 import { Image } from "@nextui-org/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -90,52 +91,52 @@ export default function Footer() {
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/#services"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
                     Delivery & SoS yachting
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/#services"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
                     Training
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/#services"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
                     Cleaning, Maintenance & In-charge
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/#services"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
                     Sales & Renting
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/#services"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
                     Inspection
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

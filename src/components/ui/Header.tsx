@@ -98,7 +98,7 @@ export default function Header({ lang }: { lang: string }) {
               if (pathname.match(/\/services\/.+/)) {
                 const newPath = handleLocaleToggle(pathname);
 
-                console.log(newPath);
+                // console.log(newPath);
                 router.push(`/${newLang}/${newPath}`);
               } else {
                 router.push(`./${newLang}`);
