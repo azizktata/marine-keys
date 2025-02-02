@@ -14,7 +14,45 @@ export default function CarouselCards() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
-  const images = ["/hero-1.webp", "/hero-2.webp", "/cover-3.webp"];
+  // const images = ["/hero-1.webp", "/hero-1.webp", "/cover-3.webp"];
+  const boats = [
+    {
+      id: 1,
+      nom: "Marine Keys",
+      length: 42,
+      image: "/hero-1.webp",
+      prix: 350,
+      capacity: 150,
+      type: "Catamaran",
+    },
+    {
+      id: 2,
+      nom: "Ocean Breeze",
+      length: 30,
+      image: "/cover-5.jpg",
+      prix: 200,
+      capacity: 80,
+      type: "Sailboat",
+    },
+    {
+      id: 3,
+      nom: "Wave Rider",
+      length: 55,
+      image: "/hero-2.webp",
+      prix: 500,
+      capacity: 200,
+      type: "Yacht",
+    },
+    {
+      id: 4,
+      nom: "Blue Horizon",
+      length: 38,
+      image: "vente-2.jpg",
+      prix: 275,
+      capacity: 120,
+      type: "Speedboat",
+    },
+  ];
   const b = useTranslations("Buttons");
   return (
     <>
@@ -25,24 +63,22 @@ export default function CarouselCards() {
         onMouseLeave={plugin.current.reset}
       >
         <CarouselContent className="m-auto flex ">
-          {images.map((img, index) => (
+          {boats.map((boat, index) => (
             <CarouselItem
               className=" sm:basis-1/2 md:basis-1/3 flex justify-center items-center "
               key={index}
             >
               <BoatCard
-                nom="Marine Keys"
+                nom={boat.nom}
                 length={42}
-                image={img}
-                prix={350}
-                capacity="150"
-                type="Caramander"
+                image={boat.image}
+                prix={boat.prix}
+                capacity={boat.capacity}
+                type={boat.type}
               />
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <CarouselNext />
-      <CarouselPrevious /> */}
       </Carousel>
       <Button
         variant="bordered"

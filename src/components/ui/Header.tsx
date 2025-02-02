@@ -126,7 +126,7 @@ export default function Header({ lang }: { lang: string }) {
           />
         </NavbarItem>
       </NavbarContent>
-      <NavbarMenu className="flex flex-col  gap-8 pt-4">
+      <NavbarMenu className="flex flex-col  gap-8 pt-8">
         {menuItems.map((item, index) => (
           <NavbarMenuItem
             onClick={handleMenuItemClick}

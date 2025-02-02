@@ -3,12 +3,36 @@ import React from "react";
 
 import { Image } from "@nextui-org/image";
 import Link from "next/link";
+import { fetchAllServicesFromWP } from "@/utils/getData";
 
-export default function Footer() {
+export default function Footer({ lang }: { lang: string }) {
+  const backup = [
+    "Yacht Delivery",
+    "Yacht Training",
+    "SoS Yachting",
+    "Yacht Cleaning",
+    "Yacht Maintenance",
+    "Yacht Management",
+    "Sales & Renting",
+    "Yacht Inspection",
+  ];
+  const [services, setServices] = React.useState(backup);
+  React.useEffect(() => {
+    const fetchServices = async () => {
+      const services = await fetchAllServicesFromWP(lang);
+      if (services.length === 0) {
+        return;
+      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      setServices(services.map((service: any) => service.acf.service.titre));
+      //  console.log(services.map((service) => service.acf.service.titre));
+    };
+    fetchServices();
+  }, [lang]);
   return (
     <footer className="bg-gray-100 border-t border-gray-200">
       <div className="mx-auto max-w-screen-xl space-y-16 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8 ">
-        <div className="flex md:flex-row justify-between items-center flex-col px-8">
+        <div className="flex md:flex-row justify-between items-center  flex-col px-8">
           <div className="w-1/2 mb-8 flex flex-col items-center">
             <div className="text-teal-600">
               <Image src="/logo.png" alt="logo" width={150} height={100} />
@@ -85,22 +109,40 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-wrap gap-16 w-full ">
+          <div className="flex flex-wrap  justify-center items-start gap-16 lg:gap-32 w-full ">
             <div>
-              <p className="font-medium text-gray-900">Services</p>
+              <p className="font-medium text-gray-900 mb-4">Services</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
+              <ul className=" text-sm grid grid-cols-2 gap-4 ">
+                {services.map((service: string, index: number) => (
+                  <li key={index}>
+                    <Link
+                      href={`/${lang}/services/${service
+                        .split(" ")
+                        .join("-")
+                        .toLowerCase()}
+                        
+                      
+                      `}
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      {service}
+                    </Link>
+                  </li>
+                ))}
+                {/* <li>
                   <Link
-                    href="/#services"
+                    href={
+                      
+                    }
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Delivery & SoS yachting
+                    Yacht Delivery
                   </Link>
-                </li>
+                </li> */}
 
-                <li>
+                {/* <li>
                   <Link
                     href="/#services"
                     className="text-gray-700 transition hover:opacity-75"
@@ -109,6 +151,15 @@ export default function Footer() {
                     Training
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/#services"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    {" "}
+                    SoS yachting
+                  </Link>
+                </li>
 
                 <li>
                   <Link
@@ -116,7 +167,25 @@ export default function Footer() {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Cleaning, Maintenance & In-charge
+                    Yacht Cleaning
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#services"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    {" "}
+                    Yacht Maintenance
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#services"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    {" "}
+                    Yacht Management
                   </Link>
                 </li>
 
@@ -135,9 +204,9 @@ export default function Footer() {
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     {" "}
-                    Inspection
+                    Yacht Inspection
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 

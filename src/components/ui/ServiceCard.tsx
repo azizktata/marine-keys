@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@nextui-org/button";
 import {
   Anchor,
   ArrowRight,
@@ -15,6 +14,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Button } from "./button";
 export default function ServiceCard({
   title,
   description,
@@ -79,16 +79,16 @@ export default function ServiceCard({
           {icon}
           <h1 className="text-2xl text-white font-semibold ">{title}</h1>
           <p className="text-white max-w-xs">{description}</p>
-          <Link
-            href={`/${locale}/services/${title
-              .toLowerCase()
-              .replace(/ /g, "-")}`}
-          >
-            <Button variant="light" className="text-white ">
+          <Button asChild variant="ghost" className="text-white ">
+            <Link
+              href={`/${locale}/services/${title
+                .toLowerCase()
+                .replace(/ /g, "-")}`}
+            >
               {b("Button1")}
               <ArrowRight size={16} />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
       <div className="relative w-full  h-[338px] ">

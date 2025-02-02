@@ -14,7 +14,7 @@ export default function BoatCard({
   length: number;
   image: string;
   prix: number;
-  capacity: string;
+  capacity: number;
   type: string;
 }) {
   const t = useTranslations("boatCard");
@@ -49,18 +49,6 @@ export default function BoatCard({
           <span className="text-xs">{prix}</span>
         </div>
       </CardBody>
-      {/* <CardFooter className="flex justify-between items-center border-t  py-4">
-      <div>
-        <p className="text-xs text-gray-500">A partir de</p>
-        <p className="text-lg text-gray-700 font-semibold">{prix} TND</p>
-      </div>
-      <Button
-       
-        className="bg-[#ffce5b] text-lg rounded"
-      >
-        Voir plus
-      </Button>
-    </CardFooter> */}
     </Card>
   );
 }
