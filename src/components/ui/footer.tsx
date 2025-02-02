@@ -114,7 +114,7 @@ export default function Footer({ lang }: { lang: string }) {
                 Services
               </p>
 
-              <ul className=" text-xs sm:text-sm grid grid-cols-2 gap-2 sm:gap-4 ">
+              <ul className=" text-xs xs:text-sm grid grid-cols-2 gap-2 sm:gap-4 ">
                 {services.map((service: string, index: number) => (
                   <li key={index}>
                     <Link
