@@ -25,14 +25,13 @@ export default function Footer({ lang }: { lang: string }) {
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setServices(services.map((service: any) => service.acf.service.titre));
-      //  console.log(services.map((service) => service.acf.service.titre));
     };
     fetchServices();
   }, [lang]);
   return (
     <footer className="bg-gray-100 border-t border-gray-200">
       <div className="mx-auto max-w-screen-xl space-y-16 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8 ">
-        <div className="flex md:flex-row justify-between items-center  flex-col px-8">
+        <div className="flex lg:flex-row justify-between items-center  flex-col px-8">
           <div className="w-1/2 mb-8 flex flex-col items-center">
             <div className="text-teal-600">
               <Image src="/logo.png" alt="logo" width={150} height={100} />
@@ -109,11 +108,13 @@ export default function Footer({ lang }: { lang: string }) {
             </ul>
           </div>
 
-          <div className="flex flex-wrap  justify-center items-start gap-16 lg:gap-32 w-full ">
+          <div className="flex flex-wrap  justify-center items-start gap-8 md:gap-32 lg:gap-32 w-full ">
             <div>
-              <p className="font-medium text-gray-900 mb-4">Services</p>
+              <p className="font-medium text-gray-900 mb-6 sm:mb-4 text-center sm:text-left">
+                Services
+              </p>
 
-              <ul className=" text-sm grid grid-cols-2 gap-4 ">
+              <ul className=" text-xs sm:text-sm grid grid-cols-2 gap-2 sm:gap-4 ">
                 {services.map((service: string, index: number) => (
                   <li key={index}>
                     <Link
@@ -130,90 +131,13 @@ export default function Footer({ lang }: { lang: string }) {
                     </Link>
                   </li>
                 ))}
-                {/* <li>
-                  <Link
-                    href={
-                      
-                    }
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Yacht Delivery
-                  </Link>
-                </li> */}
-
-                {/* <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Training
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    SoS yachting
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Yacht Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Yacht Maintenance
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Yacht Management
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Sales & Renting
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#services"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    {" "}
-                    Yacht Inspection
-                  </Link>
-                </li> */}
               </ul>
             </div>
 
             <div>
-              <p className="font-medium text-gray-900">Company</p>
+              <p className="font-medium text-gray-900 mb-6 sm:mb-4">Company</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
+              <ul className=" space-y-4 text-sm">
                 <li>
                   <a
                     href="#about"
