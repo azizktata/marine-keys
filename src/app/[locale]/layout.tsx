@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: "Marine Keys",
   description:
     "Elite Yachting Services specializing in yacht services, delivery and maintenance",
+  other: {
+    "http-equiv": "Content-Security-Policy",
+    content: "upgrade-insecure-requests",
+  },
 };
 
 export default async function RootLayout({
