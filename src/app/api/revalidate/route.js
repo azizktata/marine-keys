@@ -1,6 +1,6 @@
 import { revalidateTag } from 'next/cache'
 
-export async function POST(
+export async function GET(
   req,
  
 ) {

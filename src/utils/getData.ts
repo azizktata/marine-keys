@@ -21,7 +21,6 @@ import { cache } from "react";
   export const fetchServicesLocaleFromWP = cache(
 
     async (locale:string) => {
-      console.log("Fetching services from WP");
       const res = await fetch(`/api/proxy?locale=${locale}`,{ next: { tags: ['services']} } );
       const data = await res.json();
       if(!data) {
