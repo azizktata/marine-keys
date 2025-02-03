@@ -70,7 +70,7 @@ export const services = [
       }
       return data;
   };
-  export const fetchAllServicesFromWP = async (locale:string) => {
+  export const fetchServicesLocaleFromWP = async (locale:string) => {
     const res = await fetch(`/api/proxy?locale=${locale}`, { next: { revalidate: 1800 } });
     const data = await res.json();
       if(!data) {

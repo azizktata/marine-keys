@@ -3,7 +3,7 @@ import React from "react";
 
 import { Image } from "@nextui-org/image";
 import Link from "next/link";
-import { fetchAllServicesFromWP } from "@/utils/getData";
+import { fetchServicesLocaleFromWP } from "@/utils/getData";
 
 export default function Footer({ lang }: { lang: string }) {
   const backup = [
@@ -19,7 +19,7 @@ export default function Footer({ lang }: { lang: string }) {
   const [services, setServices] = React.useState(backup);
   React.useEffect(() => {
     const fetchServices = async () => {
-      const services = await fetchAllServicesFromWP(lang);
+      const services = await fetchServicesLocaleFromWP(lang);
       if (services.length === 0) {
         return;
       }
@@ -122,8 +122,6 @@ export default function Footer({ lang }: { lang: string }) {
                         .split(" ")
                         .join("-")
                         .toLowerCase()}
-                        
-                      
                       `}
                       className="text-gray-700 transition hover:opacity-75"
                     >
