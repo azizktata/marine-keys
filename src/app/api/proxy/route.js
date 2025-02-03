@@ -1,3 +1,4 @@
+
 export async function GET(request) {
     const { searchParams } = new URL(request.url);
     const locale = searchParams.get('locale');
@@ -9,7 +10,10 @@ export async function GET(request) {
     const externalApiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/services-${locale}`;
   
     try {
-      const response = await fetch(externalApiUrl);
+      const response = 
+
+        await fetch(externalApiUrl,{ next: { tags: ['services'], revalidate:7600 } })
+     
   
       if (!response.ok) {
         return new Response('Failed to fetch data from the external API', { status: 500 });
