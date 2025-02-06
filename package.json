@@ -15,6 +15,7 @@
     "@nextui-org/breadcrumbs": "^2.2.4",
     "@nextui-org/button": "^2.2.7",
     "@nextui-org/card": "^2.2.7",
+    "@nextui-org/dropdown": "^2.3.9",
     "@nextui-org/image": "^2.2.3",
     "@nextui-org/navbar": "^2.2.5",
     "@nextui-org/switch": "^2.2.6",

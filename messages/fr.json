@@ -107,5 +107,10 @@
         "home": "Accueil",
         "about": "À propos",
         "services": "Services"
+    },
+    "footer": {
+        "follow-us": "suivez nous",
+        "our-services": "nos services",
+        "our-contact": "nos contact"
     }
 }

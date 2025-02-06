@@ -107,7 +107,12 @@
 
     "navLinks": {
         "home": "Home",
-        "about": "About",
+        "about": "About us",
         "services": "Services"
-    }
+    },
+    "footer": {
+      "follow-us": "follow us",
+      "our-services": "our services",
+      "our-contact": "our contact"
+  }
 }

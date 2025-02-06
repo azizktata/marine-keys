@@ -10,7 +10,7 @@ import { cache } from "react";
       return data;
   };
   export const fetchServiceFromWP = async (slug:string, locale:string) => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services-${locale}?slug=${slug}`,{next: {tags: ['services'], revalidate: 1800}});
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services-${locale}?slug=${slug}`,{next: {tags: ['services'], revalidate: 7200}});
       const data = await res.json();
       if(!data) {
         return [];

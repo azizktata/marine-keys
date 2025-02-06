@@ -12,7 +12,7 @@ export async function GET(request) {
     try {
       const response = 
 
-        await fetch(externalApiUrl,{ next: { tags: ['services'], revalidate:7600 } })
+        await fetch(externalApiUrl,{ next: { tags: ['services'], revalidate:7200 } })
      
   
       if (!response.ok) {

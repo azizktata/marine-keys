@@ -14,7 +14,7 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-} from "@heroui/dropdown";
+} from "@nextui-org/dropdown";
 import { Button } from "@nextui-org/button";
 
 import { ChevronDown, Phone } from "lucide-react";
@@ -69,7 +69,7 @@ export default function Header({ lang }: { lang: string }) {
 
   return (
     <Navbar
-      className="py-2"
+      className="py-2 bg-[#F3F7F9]"
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
       isBordered={true}
@@ -87,23 +87,27 @@ export default function Header({ lang }: { lang: string }) {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex gap-8 lg:gap-16 text-lg"
+        className="hidden sm:flex gap-8 lg:gap-16"
         justify="center"
       >
         <NavbarItem>
-          <Link color="foreground" href="/">
+          <Link
+            color="foreground"
+            className="hover:text-[#2DABE3] transition-colors "
+            href="/"
+          >
             {t("home")}
           </Link>
         </NavbarItem>
 
-        <Dropdown isOpen={isOpen}>
+        <Dropdown radius="none" className="bg-[#F3F7F9] p-0" isOpen={isOpen}>
           <NavbarItem className="cursor-pointer">
             <DropdownTrigger>
               <button
                 onMouseEnter={() => {
                   setIsOpen(true);
                 }}
-                className="flex gap-2 items-center text-gray-900"
+                className="flex gap-2 items-center text-gray-900 hover:text-[#2DABE3] transition-colors"
               >
                 {t("services")} <ChevronDown size={16} />
               </button>
@@ -111,30 +115,52 @@ export default function Header({ lang }: { lang: string }) {
           </NavbarItem>
           <DropdownMenu
             aria-label="Marine keys services"
-            className="w-[200px] text-left flex  "
+            className="w-full text-left flex   rounded-none"
             onMouseLeave={() => {
               setIsOpen(false);
             }}
+            variant="flat"
+            itemClasses={{
+              base: [
+                "rounded-none",
+                "text-default-800",
+                "transition-opacity",
+                "data-[hover=true]:text-[#2DBDEE]",
+
+                "data-[hover=true]:bg-white",
+                "py-3",
+                "px-4",
+                "border-b",
+                "data-[selectable=true]:focus:bg-default-50",
+                "data-[pressed=true]:opacity-70",
+              ],
+            }}
           >
-            {services.map((service, index) => (
-              <DropdownItem key={index}>
-                <Link
-                  href={`/${lang}/services/${service
+            {services.toReversed().map((service, index) => (
+              // <DropdownSection className=" hover:text-[#2DBDEE]  " key={index}>
+              <DropdownItem
+                key={index}
+                title={service}
+                onPress={() => {
+                  router.push(`/${lang}/services/${service
                     .split(" ")
                     .join("-")
                     .toLowerCase()}
-                      `}
-                  className="text-gray-700 "
-                >
-                  {service}
-                </Link>
+                  `);
+                }}
+              >
+                {service}
               </DropdownItem>
+              // </DropdownSection>
             ))}
           </DropdownMenu>
         </Dropdown>
 
         <NavbarItem>
-          <Link className="text-base" href="/#about">
+          <Link
+            className=" hover:text-[#2DABE3] transition-colors"
+            href={`/${lang}/about-us`}
+          >
             {t("about")}
           </Link>
         </NavbarItem>
@@ -156,6 +182,7 @@ export default function Header({ lang }: { lang: string }) {
           <Switch
             defaultSelected={lang === "en"} // Ensures it reflects the current language
             color="primary"
+            // className="text-[#2DBDEE] color-[#2DBDEE] "
             size="lg"
             onChange={() => {
               const newLang = lang === "en" ? "fr" : "en";
