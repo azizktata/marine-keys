@@ -2,6 +2,7 @@
 import React from "react";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
@@ -24,12 +25,19 @@ export default function CarouselServices({
   locale: string;
 }) {
   const plugin = React.useRef(
-    Autoplay({ delay: speed, stopOnInteraction: false })
+    Autoplay({ delay: speed, stopOnInteraction: true })
   );
 
   const infiniteServices = [...services, ...services];
+  const [cApi, setCApi] = React.useState<CarouselApi>();
   return (
-    <Carousel plugins={[plugin.current]} className="w-full  m-auto">
+    <Carousel
+      plugins={[plugin.current]}
+      onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
+      onMouseLeave={() => cApi!.plugins().autoplay?.play()}
+      className="w-full  m-auto"
+      setApi={setCApi}
+    >
       <CarouselContent className="m-auto flex ">
         {infiniteServices.map((service, index) => (
           <CarouselItem

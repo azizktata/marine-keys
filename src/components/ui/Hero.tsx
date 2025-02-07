@@ -2,6 +2,7 @@
 import React from "react";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -31,15 +32,19 @@ export default function Hero({
   const covers = Object.values(hero.images);
 
   const b = useTranslations("Buttons");
-  const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  );
+  const plugin = React.useRef(Autoplay({ delay: 4000 }));
+  const [cApi, setCApi] = React.useState<CarouselApi>();
+
   return (
     <Carousel
       plugins={[plugin.current]}
       className="w-full  m-auto "
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
+      onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
+      onMouseLeave={() => cApi!.plugins().autoplay?.play()}
+      opts={{
+        loop: true,
+      }}
+      setApi={setCApi}
     >
       <CarouselContent>
         {covers.map((cover, index) => (
@@ -48,7 +53,7 @@ export default function Hero({
               <Card className="relative w-full h-[600px] rounded-none overflow-hidden shadow-xl bg-gray-800">
                 <Image
                   alt="Card background"
-                  className="absolute z-0 w-full h-full object-cover"
+                  className="absolute z-0 w-full h-full w-auto h-auto object-cover"
                   src={cover || "/cover-1.jpg"}
                   fill
                 />
@@ -79,7 +84,10 @@ export default function Hero({
         ))}
       </CarouselContent>
       <CarouselPrevious className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20  p-2 rounded-none bg-black/70 border-none text-white  hover:bg-white/40" />
-      <CarouselNext className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40" />
+      <CarouselNext
+        disabled={!cApi?.canScrollNext()}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40"
+      />
     </Carousel>
   );
 }
