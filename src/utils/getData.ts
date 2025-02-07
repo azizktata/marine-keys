@@ -29,6 +29,17 @@ import { cache } from "react";
       return data;
     }
   ) 
+  export const fetchAboutUsFromWP = cache(
+
+    async () => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/a-propos`)
+      const data = await res.json();
+      if(!data) {
+        return [];
+      }
+      return data;
+    }
+  ) 
 
 
   export const services = [

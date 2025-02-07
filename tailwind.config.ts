@@ -15,6 +15,8 @@ export default {
   	extend: {
 		screens: {
 			'xs': '375px', 
+			'tablette': '500px',
+			'sm-v2': '685px',
 			'laptop': '1060px',
 		  },
   		colors: {

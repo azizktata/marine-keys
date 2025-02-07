@@ -186,14 +186,12 @@ export default function Header({ lang }: { lang: string }) {
             size="lg"
             onChange={() => {
               const newLang = lang === "en" ? "fr" : "en";
+              let newPath = pathname.slice(3);
               if (pathname.match(/\/services\/.+/)) {
-                const newPath = handleLocaleToggle(pathname);
-
-                // console.log(newPath);
-                router.push(`/${newLang}/${newPath}`);
-              } else {
-                router.push(`./${newLang}`);
+                newPath = handleLocaleToggle(pathname);
               }
+              // console.log(newPath);
+              router.push(`/${newLang}/${newPath}`, { scroll: false });
             }}
             thumbIcon={({ isSelected }) =>
               isSelected ? (

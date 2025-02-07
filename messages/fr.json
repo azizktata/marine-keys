@@ -111,6 +111,10 @@
     "footer": {
         "follow-us": "suivez nous",
         "our-services": "nos services",
-        "our-contact": "nos contact"
+        "our-contact": "nos contact",
+        "about-us": "À propos",
+        "who-we-are": "Qui sommes-nous",
+        "our-values": "nos valeurs",
+        "our-team": "notre équipe"
     }
 }

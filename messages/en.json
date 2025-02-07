@@ -113,6 +113,10 @@
     "footer": {
       "follow-us": "follow us",
       "our-services": "our services",
-      "our-contact": "our contact"
+      "our-contact": "our contact",
+      "about-us": "about us",
+      "who-we-are": "Who we are",
+      "our-values": "our values",
+      "our-team": "our team"
   }
 }

@@ -1,223 +1,188 @@
-import { Medal, ShipWheel, Star } from "lucide-react";
+import TeamCard from "@/components/ui/TeamCard";
+import { fetchAboutUsFromWP } from "@/utils/getData";
+import { Component, Medal, ShipWheel, Star, Timer, Trophy } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-export default function page() {
+export default async function page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const pageContent = await fetchAboutUsFromWP();
+  const locale = (await params).locale;
+  const aboutUs = pageContent[0].acf?.[`qui_sommes_nous_${locale}`];
+  const ourValues = pageContent[0].acf?.[`nos_valeurs_${locale}`];
+  const ourTeam = pageContent[0].acf?.[`notre_equipe_${locale}`];
+
   return (
     <div>
       <div className=" py-4   ">
-        <div className="flex w-[90%] lg:w-[85%]  mx-auto flex-col  lg:flex-row justify-between  lg:my-16">
-          <div className="w-full min-h-[350px] lg:w-1/3 max-w-xl relative mx-auto ">
+        <div className="flex w-[90%] lg:w-[85%] max-w-2xl lg:max-w-full mx-auto flex-col gap-8 justify-center  lg:flex-row justify-between  sm:my-8 lg:my-16">
+          <div className="w-full min-h-[350px] lg:w-1/3 max-w-2xl relative mx-auto ">
             <Image
-              src="/about-img.jpg"
-              alt="French"
+              src={aboutUs.image ? aboutUs.image : "/about-img.jpg"}
+              alt="Marine keys about image"
               className="w-full relative object-cover"
               fill
             />
           </div>
-          <div className="w-full lg:w-[55%] ">
+          <div className="w-full lg:w-[55%] max-w-2xl">
             <div className="border-l-5 border-[#2DABE3] pl-3 mb-8">
               <p className="text-gray-500 mb-2 uppercase tracking-widest ">
-                A propos Marine Keys
+                {aboutUs.subtitle ? aboutUs.subtitle : null}
               </p>
               <h1 className="text-4xl  font-semibold tracking-wider">
-                Redifining yachting Services
+                {aboutUs.title ? aboutUs.title : null}
               </h1>
             </div>
             <div className="text-gray-500 max-w-xl">
-              <p className="leading-8 py-2">
-                Marine Keys est une entreprise d&apos;excellence dans le domaine
-                du yachting, offrant des services haut de gamme pour les
-                passionnés de navigation. Forts d&apos;une expertise reconnue et
-                d&apos;une équipe de professionnels qualifiés, nous nous
-                engageons à fournir des solutions sur mesure pour chaque
-                propriétaire de yacht. Que ce soit pour la livraison,
-                l&apos;entretien, la gestion, la formation ou l&apos;assistance
-                en mer, Marine Keys garantit un service fiable, sécurisé et
-                adapté à vos besoins.
-              </p>
-              <p className="leading-8 py-2">
-                Notre engagement envers la satisfaction client, notre réactivité
-                et notre passion pour le monde maritime nous permettent de vous
-                offrir un service haut de gamme, digne des plus grandes
-                exigences. Faire confiance à Marine Keys, c&apos;est opter pour
-                une expertise inégalée, un accompagnement sur-mesure et une
-                expérience de yachting sans compromis.
-              </p>
+              <div
+                className="py-2 leading-8 "
+                dangerouslySetInnerHTML={{
+                  __html: aboutUs.description,
+                }}
+              ></div>
             </div>
           </div>
         </div>
 
         <div
           id="professionalism"
-          className="flex flex-col md:flex-row gap-2 lg:gap-8 my-8 lg:my-16 w-[90%] lg:w-[85%] mx-auto"
+          className="flex flex-col lg:flex-row gap-2 lg:gap-8 my-8 lg:my-16 w-[90%] lg:w-[80%] mx-auto max-w-2xl lg:max-w-full"
         >
           <div
             id="card"
-            className="flex flex-col justify-center items-center w-full lg:w-1/3 px-4 lg:px-10 py-8 shadow-md rounded-lg"
+            className="flex flex-col justify-center items-center w-full lg:w-1/3 px-4 md:px-8 xl:px-10 py-8 shadow-md rounded-lg"
           >
             <div className="w-20 h-20 bg-[#2DABE3] rounded-full flex justify-center items-center">
               <ShipWheel size={40} color="#ffffff" strokeWidth={1.25} />
             </div>
             <div className="text-center py-4 ">
               <h3 className="text-xl font-medium text-gray-800 mb-2">
-                Garder votre yacht en parfait état
+                {aboutUs?.["highlight_point_1"].title}
               </h3>
               <p className="text-gray-500 font-base">
-                Votre partenaire de confiance pour des solutions de yachting{" "}
+                {aboutUs?.["highlight_point_1"].description}
               </p>
             </div>
           </div>
           <div
             id="card"
-            className="flex flex-col justify-center items-center w-full lg:w-1/3 px-4 lg:px-10 py-8 shadow-md rounded-lg"
+            className="flex flex-col justify-center items-center w-full lg:w-1/3 px-4 md:px-8 xl:px-10  py-8 shadow-md rounded-lg"
           >
             <div className="w-20 h-20 bg-[#2DABE3] rounded-full flex justify-center items-center">
               <Star size={40} color="#ffffff" strokeWidth={1.25} />
             </div>
             <div className="text-center py-4 ">
               <h3 className="text-xl font-medium text-gray-800 mb-2">
-                Équipages qualifiés et expérimentés
+                {aboutUs?.["highlight_point_2"].title}
               </h3>
               <p className="text-gray-500 font-base">
-                Des professionnels certifiés à votre service.
+                {aboutUs?.["highlight_point_2"].description}
               </p>
             </div>
           </div>
           <div
             id="card"
-            className="flex flex-col justify-center items-center w-full lg:w-1/3 px-4 lg:px-10 py-8 shadow-md rounded-lg"
+            className="flex flex-col justify-center items-center w-full lg:w-1/3 px-4 md:px-8 xl:px-10  py-8 shadow-md rounded-lg"
           >
             <div className="w-20 h-20 bg-[#2DABE3] rounded-full flex justify-center items-center">
               <Medal size={40} color="#ffffff" strokeWidth={1.25} />
             </div>
             <div className="text-center py-4 ">
               <h3 className="text-xl font-medium text-gray-800 mb-2">
-                Elite yachting services
+                {aboutUs?.["highlight_point_3"].title}
               </h3>
               <p className="text-gray-500 font-base">
-                Service rapide professionnel et axé sur la satisfaction client
+                {aboutUs?.["highlight_point_3"].description}
               </p>
             </div>
           </div>
         </div>
 
         <div className="bg-[#F8F9FA] ">
-          <div className="w-[90%] lg:w-[85%] mx-auto py-8 lg:py-16">
-            <h1 className="text-2xl tracking-wider  font-semibold mb-2">
-              Nos missions
-            </h1>
-            <p className="text-gray-600 leading-8 max-w-xl py-2">
-              Chez Marine Keys, notre mission est de révolutionner
-              l&apos;expérience du yachting en offrant des services
-              personnalisés qui allient qualité, expertise et innovation. Nous
-              nous efforçons d&apos;apporter une valeur ajoutée à chaque détail
-              de nos prestations, garantissant une navigation sereine et un
-              accompagnement optimal pour nos clients. Notre objectif est de
-              rendre l&apos;univers du yachting plus accessible, plus
-              confortable et totalement dépourvu de soucis, grâce à notre
-              engagement envers l&apos;excellence.
-            </p>
-          </div>
-
-          <div id="nos-valeurs" className="bg-[#2DABE3] py-8 lg:py-16 ">
-            <div className="w-[90%] lg:w-[85%] mx-auto flex flex-col md:flex-row justify-between gap-8 ">
-              <div className=" md:w-1/2">
-                <h1 className="text-2xl tracking-wider text-white font-semibold mb-2">
-                  Les valeurs qui nous gouvernent
-                </h1>
-                <p className="text-gray-100 leading-8 max-w-xl py-2">
-                  L&apos;excellence est au cœur de notre engagement. Nous
-                  mettons tout en œuvre pour offrir des prestations haut de
-                  gamme, avec pour priorité la satisfaction totale de nos
-                  clients. Chaque service que nous proposons est pensé pour
-                  répondre aux plus hautes exigences et garantir une expérience
-                  unique. le service client premium est notre priorité absolue.
-                  L&apos;écoute et la réactivité sont au centre de notre
-                  approche. Nous nous assurons que chaque client bénéficie
-                  d&apos;un accompagnement personnalisé et de solutions sur
-                  mesure, adaptées à ses attentes et à ses exigences
-                  spécifiques.
-                </p>
+          <div id="values" className="bg-[#182333] py-8 sm:py-16  ">
+            <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col max-w-2xl lg:max-w-full lg:flex-row justify-between gap-8 md:gap-16 ">
+              <div className=" lg:w-1/2">
+                <div>
+                  <div className="border-l-5 border-[#2DABE3] pl-3 mb-8">
+                    <p className="text-gray-200 mb-2 uppercase tracking-widest ">
+                      {ourValues.subtitle}
+                    </p>
+                    <h1 className="text-4xl  font-semibold tracking-wider text-white ">
+                      {ourValues.title}
+                    </h1>
+                  </div>
+                  <div
+                    className="text-gray-200 leading-8 max-w-xl py-2"
+                    dangerouslySetInnerHTML={{
+                      __html: ourValues.description,
+                    }}
+                  ></div>
+                </div>
+                <div className="flex flex-col gap-6 mt-4 md:mt-8 sm:flex-row md:gap-8 sm:border-t-1 border-[#2DABE3] ">
+                  <div className="flex items-center md:items-start gap-2 sm:border-r-1 border-[#2DABE3] pr-4 pt-4">
+                    <Timer size={48} color="#2DABE3" strokeWidth={1.25} />
+                    <p className="font-semibold text-white text-base">
+                      {ourValues?.["highlight_point_1"].title}
+                    </p>
+                  </div>
+                  <div className="flex items-center  md:items-start gap-2 sm:border-r-1 border-[#2DABE3] pr-4 pt-4">
+                    <Trophy size={48} color="#2DABE3" strokeWidth={1.25} />
+                    <p className="font-semibold text-white text-base">
+                      {ourValues?.["highlight_point_2"].title}
+                    </p>
+                  </div>
+                  <div className="flex items-center md:items-start gap-2  pt-4">
+                    <Component size={48} color="#2DABE3" strokeWidth={1.25} />
+                    <p className="font-semibold text-white text-base">
+                      {ourValues?.["highlight_point_3"].title}
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className=" min-h-[250px] max-h-[300px] md:w-1/2   relative lg:-mt-48  ">
+              <div className=" min-h-[250px] max-h-[500px] w-full lg:w-1/2   relative   ">
                 <Image
-                  src="/boat.webp"
-                  alt="French"
+                  src={ourValues.image ? ourValues.image : "/values-img.jpg"}
+                  alt="notre valeurs"
                   className="w-full relative object-cover"
                   fill
                 />
               </div>
             </div>
           </div>
-          <div className="w-[90%] lg:w-[85%] mx-auto py-8 lg:py-16 flex flex-col gap-8 lg:flex-row">
+          <div
+            id="team"
+            className="w-[90%] lg:w-[80%]  max-w-2xl lg:max-w-full mx-auto py-8 sm:py-16 flex flex-col gap-8 "
+          >
             <div className="w-full lg:w-1/2">
               <h1 className="text-2xl tracking-wider  font-semibold mb-2">
-                Nos Equipes
+                {ourTeam.title}
               </h1>
               <p className="text-gray-600 leading-8 max-w-xl py-2">
-                Marine Keys repose sur une équipe de professionnels passionnés
-                et hautement qualifiés. Nos experts en yachting, techniciens et
-                formateurs travaillent main dans la main pour assurer des
-                services d&apos;une qualité exceptionnelle. Chaque membre de
-                notre personnel est dédié à fournir un accompagnement
-                personnalisé, garantissant une expérience client unique et
-                sur-mesure.
+                {ourTeam.description}
               </p>
             </div>
             <div
               id="equipe"
-              className="w-full lg:w-1/2 grid gap-2 grid-cols-1 xs:grid-cols-3 "
+              className="w-full  grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
             >
-              <div className="flex flex-col items-center">
-                <div className="rounded-full relative w-32 h-32 bg-[#2DABE3] ">
-                  <Image
-                    src="/workers.PNG"
-                    alt="team"
-                    className="rounded-full relative w-full object-cover"
-                    fill
+              {Object.entries(ourTeam)
+                .filter((teamObject) => teamObject[0].includes(`membre_`))
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                .map((teamMember: any, index) => (
+                  <TeamCard
+                    key={index}
+                    name={teamMember[1].nom}
+                    role={teamMember[1].role}
+                    img={teamMember[1].image}
+                    experience={teamMember[1].experiance}
+                    linkedin={teamMember[1].linkedin}
+                    mail={teamMember[1].mail}
                   />
-                </div>
-                <div className="text-center my-2">
-                  <h3 className="text-lg font-medium text-[#2DABE3] ">
-                    John Doe
-                  </h3>
-                  <p className="font-light text-gray-400">CEO</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="rounded-full relative w-32 h-32 bg-[#2DABE3] ">
-                  <Image
-                    src="/workers.PNG"
-                    alt="team"
-                    className="rounded-full relative w-full object-cover"
-                    fill
-                  />
-                </div>
-                <div className="text-center my-2">
-                  <h3 className="text-lg font-medium text-[#2DABE3] ">
-                    John Doe
-                  </h3>
-                  <p className="font-light text-gray-400">CTO</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="rounded-full relative w-32 h-32 bg-[#2DABE3] ">
-                  <Image
-                    src="/workers.PNG"
-                    alt="team"
-                    className="rounded-full relative w-full object-cover"
-                    fill
-                  />
-                </div>
-                <div className="text-center my-2">
-                  <h3 className="text-lg font-medium text-[#2DABE3] ">
-                    John Doe
-                  </h3>
-                  <p className="font-light text-gray-400">CEO</p>
-                </div>
-              </div>
+                ))}
             </div>
           </div>
         </div>
