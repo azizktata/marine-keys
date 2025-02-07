@@ -1,19 +1,20 @@
 // import TeamCard from "@/components/ui/TeamCard";
+import TeamCard from "@/components/ui/TeamCard";
 import { fetchAboutUsFromWP } from "@/utils/getData";
 import { Component, Medal, ShipWheel, Star, Timer, Trophy } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-export default async function page({
+export default async function Page({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const pageContent = await fetchAboutUsFromWP();
   const locale = (await params).locale;
-  const aboutUs = pageContent[0].acf?.[`qui_sommes_nous_${locale}`];
-  const ourValues = pageContent[0].acf?.[`nos_valeurs_${locale}`];
-  const ourTeam = pageContent[0].acf?.[`notre_equipe_${locale}`];
+  const aboutUs = pageContent[0]?.acf?.[`qui_sommes_nous_${locale}`] ?? null;
+  const ourValues = pageContent[0]?.acf?.[`nos_valeurs_${locale}`] ?? null;
+  const ourTeam = pageContent[0]?.acf?.[`notre_equipe_${locale}`] ?? null;
 
   return (
     <div>
@@ -183,7 +184,7 @@ export default async function page({
               id="equipe"
               className="w-full  grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
             >
-              {/* {ourTeam
+              {ourTeam
                 ? Object.entries(ourTeam)
                     .filter((teamObject) => teamObject[0].includes(`membre_`))
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -198,7 +199,7 @@ export default async function page({
                         mail={teamMember[1].mail}
                       />
                     ))
-                : null} */}
+                : null}
             </div>
           </div>
         </div>

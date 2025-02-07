@@ -35,8 +35,6 @@ export default function CarouselImages({
   return (
     <Carousel
       plugins={[plugin.current]}
-      onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
-      onMouseLeave={() => cApi!.plugins().autoplay?.play()}
       className="w-full  m-auto"
       setApi={setCApi}
     >
@@ -45,6 +43,8 @@ export default function CarouselImages({
           <CarouselItem
             className=" sm:basis-1/2  flex justify-center items-center"
             key={index}
+            onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
+            onMouseLeave={() => cApi!.plugins().autoplay?.play()}
           >
             <div className="relative group w-[400px] h-[350px]  ">
               <Card className="h-full border-none rounded-none ">

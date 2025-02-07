@@ -33,8 +33,6 @@ export default function CarouselServices({
   return (
     <Carousel
       plugins={[plugin.current]}
-      onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
-      onMouseLeave={() => cApi!.plugins().autoplay?.play()}
       className="w-full  m-auto"
       setApi={setCApi}
     >
@@ -43,6 +41,8 @@ export default function CarouselServices({
           <CarouselItem
             className=" md:basis-1/2  p-0 flex  justify-center items-center "
             key={index}
+            onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
+            onMouseLeave={() => cApi!.plugins().autoplay?.play()}
           >
             <ServiceCard
               title={service.title}
