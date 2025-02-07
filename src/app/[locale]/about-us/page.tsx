@@ -1,5 +1,4 @@
 // import TeamCard from "@/components/ui/TeamCard";
-import TeamCard from "@/components/ui/TeamCard";
 import { fetchAboutUsFromWP } from "@/utils/getData";
 import { Component, Medal, ShipWheel, Star, Timer, Trophy } from "lucide-react";
 import Image from "next/image";
@@ -61,10 +60,14 @@ export default async function page({
             </div>
             <div className="text-center py-4 ">
               <h3 className="text-xl font-medium text-gray-800 mb-2">
-                {aboutUs?.["highlight_point_1"].title}
+                {aboutUs?.["highlight_point_1"].title
+                  ? aboutUs?.["highlight_point_1"].title
+                  : null}
               </h3>
               <p className="text-gray-500 font-base">
-                {aboutUs?.["highlight_point_1"].description}
+                {aboutUs?.["highlight_point_1"].description
+                  ? aboutUs?.["highlight_point_1"].description
+                  : null}
               </p>
             </div>
           </div>
@@ -77,10 +80,14 @@ export default async function page({
             </div>
             <div className="text-center py-4 ">
               <h3 className="text-xl font-medium text-gray-800 mb-2">
-                {aboutUs?.["highlight_point_2"].title}
+                {aboutUs?.["highlight_point_2"].title
+                  ? aboutUs?.["highlight_point_2"].title
+                  : null}
               </h3>
               <p className="text-gray-500 font-base">
-                {aboutUs?.["highlight_point_2"].description}
+                {aboutUs?.["highlight_point_2"].description
+                  ? aboutUs?.["highlight_point_2"].description
+                  : null}
               </p>
             </div>
           </div>
@@ -93,10 +100,14 @@ export default async function page({
             </div>
             <div className="text-center py-4 ">
               <h3 className="text-xl font-medium text-gray-800 mb-2">
-                {aboutUs?.["highlight_point_3"].title}
+                {aboutUs?.["highlight_point_3"].title
+                  ? aboutUs?.["highlight_point_3"].title
+                  : null}
               </h3>
               <p className="text-gray-500 font-base">
-                {aboutUs?.["highlight_point_3"].description}
+                {aboutUs?.["highlight_point_3"].description
+                  ? aboutUs?.["highlight_point_3"].description
+                  : null}
               </p>
             </div>
           </div>
@@ -109,10 +120,10 @@ export default async function page({
                 <div>
                   <div className="border-l-5 border-[#2DABE3] pl-3 mb-8">
                     <p className="text-gray-200 mb-2 uppercase tracking-widest ">
-                      {ourValues.subtitle}
+                      {ourValues.subtitle ?? null}
                     </p>
                     <h1 className="text-4xl  font-semibold tracking-wider text-white ">
-                      {ourValues.title}
+                      {ourValues.title ?? null}
                     </h1>
                   </div>
                   <div
@@ -128,19 +139,19 @@ export default async function page({
                   <div className="flex items-center md:items-start gap-2 sm:border-r-1 border-[#2DABE3] pr-4 pt-4">
                     <Timer size={48} color="#2DABE3" strokeWidth={1.25} />
                     <p className="font-semibold text-white text-base">
-                      {ourValues?.["highlight_point_1"].title}
+                      {ourValues?.["highlight_point_1"].title ?? null}
                     </p>
                   </div>
                   <div className="flex items-center  md:items-start gap-2 sm:border-r-1 border-[#2DABE3] pr-4 pt-4">
                     <Trophy size={48} color="#2DABE3" strokeWidth={1.25} />
                     <p className="font-semibold text-white text-base">
-                      {ourValues?.["highlight_point_2"].title}
+                      {ourValues?.["highlight_point_2"].title ?? null}
                     </p>
                   </div>
                   <div className="flex items-center md:items-start gap-2  pt-4">
                     <Component size={48} color="#2DABE3" strokeWidth={1.25} />
                     <p className="font-semibold text-white text-base">
-                      {ourValues?.["highlight_point_3"].title}
+                      {ourValues?.["highlight_point_3"].title ?? null}
                     </p>
                   </div>
                 </div>
@@ -162,17 +173,17 @@ export default async function page({
           >
             <div className="w-full lg:w-1/2">
               <h1 className="text-2xl tracking-wider  font-semibold mb-2">
-                {ourTeam.title}
+                {ourTeam.title ?? null}
               </h1>
               <p className="text-gray-600 leading-8 max-w-xl py-2">
-                {ourTeam.description}
+                {ourTeam.description ?? null}
               </p>
             </div>
             <div
               id="equipe"
               className="w-full  grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
             >
-              {ourTeam
+              {/* {ourTeam
                 ? Object.entries(ourTeam)
                     .filter((teamObject) => teamObject[0].includes(`membre_`))
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -187,7 +198,7 @@ export default async function page({
                         mail={teamMember[1].mail}
                       />
                     ))
-                : null}
+                : null} */}
             </div>
           </div>
         </div>

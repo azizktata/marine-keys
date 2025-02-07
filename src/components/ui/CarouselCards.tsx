@@ -47,7 +47,7 @@ export default function CarouselCards() {
       id: 4,
       nom: "Blue Horizon",
       length: 38,
-      image: "vente-2.jpg",
+      image: "/vente-2.jpg",
       prix: 275,
       capacity: 120,
       type: "Speedboat",

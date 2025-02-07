@@ -29,17 +29,17 @@ import { cache } from "react";
       return data;
     }
   ) 
-  export const fetchAboutUsFromWP = cache(
+  export const fetchAboutUsFromWP = 
 
     async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/a-propos`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/a-propos`, { next: {revalidate:3600}})
       const data = await res.json();
       if(!data) {
         return [];
       }
       return data;
     }
-  ) 
+
 
 
   export const services = [
