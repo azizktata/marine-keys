@@ -32,15 +32,14 @@ export default function Hero({
   const covers = Object.values(hero.images);
 
   const b = useTranslations("Buttons");
-  const plugin = React.useRef(Autoplay({ delay: 4000 }));
   const [cApi, setCApi] = React.useState<CarouselApi>();
 
   return (
     <Carousel
-      plugins={[plugin.current]}
+      plugins={[Autoplay({ delay: 2000, stopOnMouseEnter: true })]}
       className="w-full  m-auto "
-      onMouseEnter={() => cApi!.plugins().autoplay?.stop()}
-      onMouseLeave={() => cApi!.plugins().autoplay?.play()}
+      onMouseEnter={() => cApi!.plugins().autoplay?.stop() ?? false}
+      onMouseLeave={() => cApi!.plugins().autoplay?.play() ?? false}
       opts={{
         loop: true,
       }}

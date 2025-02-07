@@ -33,7 +33,7 @@ export default function Header({ lang }: { lang: string }) {
   const pathname = usePathname();
   const menuItems = [
     { label: t("home"), path: "/" },
-    { label: t("about"), path: "/about-us" },
+    { label: t("about"), path: `${lang}/about-us/` },
   ];
   const handleWhatsAppCall = () => {
     const phoneNumber = "21698797410";

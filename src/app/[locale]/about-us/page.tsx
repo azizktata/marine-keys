@@ -1,4 +1,4 @@
-import TeamCard from "@/components/ui/TeamCard";
+// import TeamCard from "@/components/ui/TeamCard";
 import { fetchAboutUsFromWP } from "@/utils/getData";
 import { Component, Medal, ShipWheel, Star, Timer, Trophy } from "lucide-react";
 import Image from "next/image";
@@ -40,7 +40,7 @@ export default async function page({
               <div
                 className="py-2 leading-8 "
                 dangerouslySetInnerHTML={{
-                  __html: aboutUs.description,
+                  __html: aboutUs.description ? aboutUs.description : null,
                 }}
               ></div>
             </div>
@@ -117,7 +117,9 @@ export default async function page({
                   <div
                     className="text-gray-200 leading-8 max-w-xl py-2"
                     dangerouslySetInnerHTML={{
-                      __html: ourValues.description,
+                      __html: ourValues.description
+                        ? ourValues.description
+                        : null,
                     }}
                   ></div>
                 </div>
@@ -169,20 +171,22 @@ export default async function page({
               id="equipe"
               className="w-full  grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
             >
-              {Object.entries(ourTeam)
-                .filter((teamObject) => teamObject[0].includes(`membre_`))
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                .map((teamMember: any, index) => (
-                  <TeamCard
-                    key={index}
-                    name={teamMember[1].nom}
-                    role={teamMember[1].role}
-                    img={teamMember[1].image}
-                    experience={teamMember[1].experiance}
-                    linkedin={teamMember[1].linkedin}
-                    mail={teamMember[1].mail}
-                  />
-                ))}
+              {/* {ourTeam
+                ? Object.entries(ourTeam)
+                    .filter((teamObject) => teamObject[0].includes(`membre_`))
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    .map((teamMember: any, index) => (
+                      <TeamCard
+                        key={index}
+                        name={teamMember[1].nom}
+                        role={teamMember[1].role}
+                        img={teamMember[1].image}
+                        experience={teamMember[1].experiance}
+                        linkedin={teamMember[1].linkedin}
+                        mail={teamMember[1].mail}
+                      />
+                    ))
+                : null} */}
             </div>
           </div>
         </div>
