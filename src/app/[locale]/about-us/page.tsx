@@ -1,4 +1,5 @@
 // import TeamCard from "@/components/ui/TeamCard";
+import TeamCard from "@/components/ui/TeamCard";
 import { fetchAboutUsFromWP } from "@/utils/getData";
 import { Component, Medal, ShipWheel, Star, Timer, Trophy } from "lucide-react";
 import Image from "next/image";
@@ -171,7 +172,7 @@ export default async function page({
               id="equipe"
               className="w-full  grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
             >
-              {/* {ourTeam
+              {ourTeam
                 ? Object.entries(ourTeam)
                     .filter((teamObject) => teamObject[0].includes(`membre_`))
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -186,7 +187,7 @@ export default async function page({
                         mail={teamMember[1].mail}
                       />
                     ))
-                : null} */}
+                : null}
             </div>
           </div>
         </div>
