@@ -36,10 +36,14 @@ export default function Hero({
 
   return (
     <Carousel
-      plugins={[Autoplay({ delay: 2000, stopOnMouseEnter: true })]}
+      plugins={[
+        Autoplay({
+          delay: 4000,
+        }),
+      ]}
       className="w-full  m-auto "
-      onMouseEnter={() => cApi!.plugins().autoplay?.stop() ?? false}
-      onMouseLeave={() => cApi!.plugins().autoplay?.play() ?? false}
+      // onMouseEnter={() => cApi!.plugins().autoplay?.stop() ?? false}
+      // onMouseLeave={() => cApi!.plugins().autoplay?.play() ?? false}
       opts={{
         loop: true,
       }}
@@ -52,10 +56,11 @@ export default function Hero({
               <Card className="relative w-full h-[600px] rounded-none overflow-hidden shadow-xl bg-gray-800">
                 <Image
                   alt="Card background"
-                  className="absolute z-0 w-full h-full w-auto h-auto object-cover"
+                  className="absolute z-0  w-full h-auto object-cover"
                   src={cover || "/cover-1.jpg"}
                   fill
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-linear"></div>
 
                 {/* Body Content */}

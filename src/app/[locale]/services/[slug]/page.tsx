@@ -11,21 +11,23 @@ export default async function Page({
   const slug = (await params).slug;
   const locale = (await params).locale;
   const fetchedData = await fetchServiceFromWP(slug, locale);
-  const service = fetchedData[0].acf.service;
+  const service = await fetchedData[0].acf.service;
   return (
     <div>
       <div id="banner" className="relative">
         <div className="relative h-96 w-full">
           <Image
             src={service.image}
-            alt={service.titre}
+            alt={`banner-${service.titre}`}
             className="object-cover w-full"
             fill
           />
           <div className="absolute inset-0 bg-black/60 "></div>
         </div>
         <div className="absolute inset-0 border z-10 flex flex-col items-center justify-center gap-2">
-          <h1 className="text-white text-4xl font-medium">{service.titre}</h1>
+          <h1 className="text-white text-3xl sm:text-4xl font-medium">
+            {service.titre}
+          </h1>
           <h2 className="text-[#BFA888]  font-medium text-base">
             <Link href={"/"}>Accueil</Link> / {service.titre}
           </h2>
