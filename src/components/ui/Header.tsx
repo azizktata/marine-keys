@@ -174,7 +174,7 @@ export default function Header({ lang }: { lang: string }) {
             onPress={handleWhatsAppCall}
           >
             <Phone size={16} />
-            <span>+216 98 797 410</span>
+            <span>+216 24 964 799</span>
           </Button>
         </NavbarItem>
 
