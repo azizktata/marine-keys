@@ -36,7 +36,7 @@ export default function Header({ lang }: { lang: string }) {
     { label: t("about"), path: `${lang}/about-us/` },
   ];
   const handleWhatsAppCall = () => {
-    const phoneNumber = "21698797410";
+    const phoneNumber = "21624964799";
     const url = `https://wa.me/${phoneNumber}`;
     window.open(url, "_blank");
   };

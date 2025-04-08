@@ -42,8 +42,6 @@ export default function Hero({
         }),
       ]}
       className="w-full  m-auto "
-      // onMouseEnter={() => cApi!.plugins().autoplay?.stop() ?? false}
-      // onMouseLeave={() => cApi!.plugins().autoplay?.play() ?? false}
       opts={{
         loop: true,
       }}
@@ -51,7 +49,11 @@ export default function Hero({
     >
       <CarouselContent>
         {covers.map((cover, index) => (
-          <CarouselItem key={index}>
+          <CarouselItem
+            onMouseEnter={() => cApi!.plugins().autoplay?.stop() ?? false}
+            onMouseLeave={() => cApi!.plugins().autoplay?.play() ?? false}
+            key={index}
+          >
             <div>
               <Card className="relative w-full h-[600px] rounded-none overflow-hidden shadow-xl bg-gray-800">
                 <Image
@@ -88,10 +90,7 @@ export default function Hero({
         ))}
       </CarouselContent>
       <CarouselPrevious className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20  p-2 rounded-none bg-black/70 border-none text-white  hover:bg-white/40" />
-      <CarouselNext
-        disabled={!cApi?.canScrollNext()}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40"
-      />
+      <CarouselNext className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20  p-2  rounded-none bg-black/70 border-none text-white hover:bg-white/40" />
     </Carousel>
   );
 }
