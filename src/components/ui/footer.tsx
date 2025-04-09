@@ -123,7 +123,7 @@ export default function Footer({ lang }: { lang: string }) {
               </div> */}
               {/* <p className="text-gray-300">📞 (+216) 36 405 900</p> */}
               <div className="text-gray-300 flex items-center gap-2">
-                <Phone size={16} /> (+216) 98 797 410
+                <Phone size={16} /> (+216) 24 964 799
               </div>
               <div className="text-gray-300 flex items-center gap-2">
                 <Mail size={16} /> contact@marinekeys.com
